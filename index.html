@@ -3,213 +3,106 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vše o botách – Detailní průvodce</title>
+<title>Vše o botách – horizontální scroll s fade</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
   body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-    overflow-x: hidden;
     color: #333;
+    overflow-x: hidden;
   }
 
-  header {
-    background: #1f2937;
-    color: #f8fafc;
-    padding: 30px 20px;
-    text-align: center;
+  header, nav {
     position: sticky;
     top: 0;
+    background: #1f2937;
+    color: white;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    text-align: center;
   }
-
-  header h1 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 2.8rem;
-    letter-spacing: 1px;
-  }
-  header p {
-    margin: 8px 0 0 0;
-    font-weight: 400;
-    font-size: 1.1rem;
-    color: #cbd5e1;
-  }
-
   nav {
     background: #334155;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 14px 10px;
-    position: sticky;
-    top: 90px;
-    z-index: 1000;
-    box-shadow: 0 3px 5px rgb(0 0 0 / 0.1);
-    flex-wrap: wrap;
+    gap: 12px;
   }
-
   nav a {
     color: #e2e8f0;
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 30px;
-    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 20px;
     font-weight: 600;
-    font-size: 1rem;
     background: #475569;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    user-select: none;
+    transition: background-color 0.3s;
   }
-  nav a:hover, nav a:focus {
+  nav a:hover {
     background: #f97316;
     color: white;
-    outline: none;
-    box-shadow: 0 4px 10px #fb923c;
   }
 
   main {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    height: calc(100vh - 150px);
-    padding: 20px 0;
+    height: calc(100vh - 120px);
+    scroll-behavior: smooth;
   }
 
   section {
     flex: 0 0 100vw;
     scroll-snap-align: start;
     background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
-    margin: 0 16px;
-    padding: 30px 40px 40px 40px;
+    margin: 0 10px;
+    padding: 20px 30px;
     box-sizing: border-box;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #f97316 #f0f4f8;
   }
 
   section.visible {
     opacity: 1;
   }
 
-  section::-webkit-scrollbar {
-    width: 8px;
-  }
-  section::-webkit-scrollbar-thumb {
-    background-color: #f97316;
-    border-radius: 10px;
-  }
-  section::-webkit-scrollbar-track {
-    background-color: #f0f4f8;
-  }
-
   section h2 {
-    margin-top: 0;
-    font-size: 2.4rem;
     color: #f97316;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+    font-size: 2rem;
+    margin-top: 0;
   }
-
   section h3 {
-    font-size: 1.6rem;
-    margin-top: 25px;
+    margin-top: 20px;
     color: #334155;
-    border-bottom: 2px solid #f97316;
-    padding-bottom: 4px;
   }
-
-  section p {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    margin-top: 10px;
+  section p, section ul li {
     color: #475569;
+    font-size: 1.1rem;
+    line-height: 1.5;
   }
 
   ul {
-    margin-top: 15px;
     padding-left: 20px;
   }
-
   ul li {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-    color: #334155;
-    position: relative;
-  }
-  ul li::before {
-    content: '✓';
-    color: #f97316;
-    font-weight: bold;
-    position: absolute;
-    left: -20px;
-    top: 2px;
+    margin-bottom: 10px;
   }
 
   img {
     max-width: 100%;
     border-radius: 14px;
-    margin-top: 25px;
-    box-shadow: 0 6px 15px rgb(0 0 0 / 0.12);
-    object-fit: cover;
+    margin-top: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
   }
 
   footer {
+    background: #1f2937;
+    color: white;
     text-align: center;
-    font-size: 14px;
-    color: #94a3b8;
-    padding: 25px 0;
-    background: #f0f4f8;
-    user-select: none;
-  }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    section {
-      padding: 25px 20px 35px 20px;
-      margin: 0 10px;
-    }
-    section h2 {
-      font-size: 2rem;
-    }
-    section h3 {
-      font-size: 1.4rem;
-    }
-    nav {
-      gap: 12px;
-      padding: 12px 10px;
-    }
-    nav a {
-      font-size: 0.95rem;
-      padding: 8px 14px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    section {
-      padding: 20px 16px 30px 16px;
-      margin: 0 8px;
-    }
-    section h2 {
-      font-size: 1.7rem;
-    }
-    section h3 {
-      font-size: 1.2rem;
-    }
-    nav a {
-      font-size: 0.9rem;
-      padding: 7px 12px;
-    }
+    padding: 15px 0;
+    font-size: 0.9rem;
   }
 </style>
 </head>
@@ -217,9 +110,7 @@
 
 <header>
   <h1>Vše o botách</h1>
-  <p>Nejdetailnější informace o nejlepších značkách a péči o tenisky</p>
 </header>
-
 <nav>
   <a href="#nike">Nike</a>
   <a href="#adidas">Adidas</a>
@@ -232,61 +123,49 @@
 <main id="container">
   <section id="nike">
     <h2>Nike – legenda mezi značkami</h2>
-    <p><strong>Historie:</strong> Nike byla založena v roce 1964 jako Blue Ribbon Sports zakladateli Philipem Knightem a Billem Bowermanem. Oficiálně byla přejmenována na Nike v roce 1971. Od počátku se značka zaměřovala na inovace a design, které měly zlepšit sportovní výkon. Jedním z největších průlomů byla technologie Air v roce 1979, která využívá vzduchové polštářky v podrážce pro lepší tlumení.</p>
+    <p><strong>Historie:</strong> Nike byla založena v roce 1964 jako Blue Ribbon Sports zakladateli Philipem Knightem a Billem Bowermanem. Od té doby se vypracovala na největší světovou značku sportovní obuvi a oblečení.</p>
     <h3>Ikonické modely</h3>
     <ul>
-      <li><strong>Air Max:</strong> Poprvé představen v roce 1987, Air Max přinesl revoluci díky viditelné vzduchové bublině pod patou. Od té doby se stal symbolem stylu a pohodlí.</li>
-      <li><strong>Air Force 1:</strong> Kultovní basketbalová bota vydaná v roce 1982, která je stále oblíbená pro svůj design a univerzálnost.</li>
-      <li><strong>Dunk:</strong> Vyvinutá pro basketbal, ale postupně se stala streetwearovou ikonou díky spolupracím a limitovaným edicím.</li>
+      <li><strong>Air Max:</strong> Poprvé představen v roce 1987, známý svým viditelným vzduchovým polštářem.</li>
+      <li><strong>Air Force 1:</strong> Kultovní basketbalová bota, která se stala módní ikonou.</li>
+      <li><strong>Dunk:</strong> Vyvinutá pro basketbal, dnes populární i ve streetwearu.</li>
     </ul>
-    <h3>Technologie a inovace</h3>
-    <p>Nike neustále investuje do nových technologií, jako je Flyknit – lehký a prodyšný materiál, který obepíná nohu, React pěna pro maximální návrat energie, a samozřejmě Air Zoom pro skvělou reakci při běhu.</p>
-    <h3>Novinky a spolupráce</h3>
-    <p>V poslední době Nike spolupracuje s designéry a celebritami, jako jsou Travis Scott, Off-White (Virgil Abloh) a další, které přinášejí limitované edice a inovativní designy. Například kolekce Air Jordan zůstává jednou z nejžádanějších sneaker sérií na světě.</p>
     <img src="https://images.unsplash.com/photo-1600180758890-e60d34796c4c?auto=format&fit=crop&w=800&q=80" alt="Nike boty" />
   </section>
 
   <section id="adidas">
     <h2>Adidas – tradice a inovace</h2>
-    <p><strong>Historie:</strong> Adidas založil v roce 1949 Adolf Dassler v Německu. Značka byla velmi úspěšná díky svému důrazu na kvalitu a výkonnostní obuv, která pomohla sportovcům dosahovat lepších výsledků. Adidas je také průkopníkem ve výrobě sportovních bot pro fotbal, běh, basketbal a další sporty.</p>
+    <p><strong>Historie:</strong> Adidas založil v roce 1949 Adolf Dassler a značka se rychle stala jedním z lídrů v oblasti sportovního vybavení díky inovacím a kvalitě.</p>
     <h3>Ikonické modely</h3>
     <ul>
-      <li><strong>Stan Smith:</strong> Kultovní tenisová bota, která se stala módní klasikou mimo sportovní svět díky jednoduchému designu a pohodlí.</li>
-      <li><strong>Superstar:</strong> Původně basketbalová bota z 70. let, která se stala ikonou hip-hopu a streetwear kultury.</li>
-      <li><strong>Ultraboost:</strong> Revoluční běžecká bota známá pro maximální komfort a návrat energie díky pěně Boost.</li>
+      <li><strong>Stan Smith:</strong> Kultovní tenisová bota s minimalistickým designem.</li>
+      <li><strong>Superstar:</strong> Původně basketbalová bota, známá svou gumovou špičkou.</li>
+      <li><strong>Ultraboost:</strong> Revoluční běžecká bota s extrémní pohodlností.</li>
     </ul>
-    <h3>Technologie a inovace</h3>
-    <p>Adidas je známý svou technologií Boost, která využívá tisíce malých kapslí pěny, které vracejí energii při každém kroku. Další inovace zahrnují Primeknit – podobný Flyknit od Nike, což je bezešvý svršek pro pohodlí a prodyšnost.</p>
-    <h3>Udržitelnost a budoucnost</h3>
-    <p>Adidas klade velký důraz na udržitelnost a spolupracuje s organizací Parley for the Oceans na výrobě bot z recyklovaných plastů z oceánů. Cílem je snížit ekologickou stopu a podpořit environmentální odpovědnost.</p>
     <img src="https://images.unsplash.com/photo-1552346154-98c4f3d8e28f?auto=format&fit=crop&w=800&q=80" alt="Adidas boty" />
   </section>
 
   <section id="puma">
     <h2>Puma – spojení sportu a stylu</h2>
-    <p><strong>Historie:</strong> Puma byla založena v roce 1948 Rudolfem Dasslerem, bratrem zakladatele Adidasu. Puma se rychle prosadila díky sportovní obuvi, která kladla důraz na design i výkon. V 60. letech se Puma proslavila díky fotbalovým kopačkám a basketbalovým botám.</p>
+    <p><strong>Historie:</strong> Puma byla založena v roce 1948 Rudolfem Dasslerem, bratrem Adolfa Dasslera, a proslavila se sportovními botami s unikátním designem.</p>
     <h3>Ikonické modely</h3>
     <ul>
-      <li><strong>Suede:</strong> Legendární model z 60. let, který se stal symbolem kultury hip-hop a skateboardingu.</li>
-      <li><strong>RS-X:</strong> Moderní silueta kombinující retro styl s nejnovějšími technologiemi.</li>
-      <li><strong>Clyde:</strong> Basketbalová bota pojmenovaná po hvězdě Waltu "Clyde" Frazierovi, která se stala ikonou díky svému stylu a pohodlí.</li>
+      <li><strong>Suede:</strong> Legendární model z 60. let, který ovlivnil streetwear.</li>
+      <li><strong>RS-X:</strong> Moderní silueta s futuristickým vzhledem.</li>
+      <li><strong>Clyde:</strong> Basketbalová bota pojmenovaná po Waltu Frazierovi.</li>
     </ul>
-    <h3>Spolupráce a trendy</h3>
-    <p>Puma spolupracuje s celebritami jako Rihanna, Selena Gomez a dalšími, kteří pomáhají značce oslovit mladé publikum a přinášet svěží designy. Puma také podporuje streetwearové trendy a módní inovace.</p>
     <img src="https://images.unsplash.com/photo-1596464716122-28d2f6f1082b?auto=format&fit=crop&w=800&q=80" alt="Puma boty" />
   </section>
 
   <section id="newbalance">
     <h2>New Balance – pohodlí a tradice</h2>
-    <p><strong>Historie:</strong> New Balance vznikl v roce 1906 jako výrobce ortopedických vložek a postupně se rozvinul v celosvětově uznávanou značku sportovní obuvi. Značka je známá svou kvalitou, pohodlím a širokým výběrem šířek, což ocení především ti, kdo mají specifické požadavky na tvar nohy.</p>
+    <p><strong>Historie:</strong> New Balance vznikl v roce 1906 jako výrobce ortopedických vložek a později se vypracoval na výrobce vysoce kvalitních sportovních bot.</p>
     <h3>Ikonické modely</h3>
     <ul>
-      <li><strong>990:</strong> Jeden z nejikoničtějších modelů New Balance, který kombinuje styl, výkon a pohodlí. Poprvé vydán v roce 1982.</li>
-      <li><strong>574:</strong> Klasický model, který je oblíbený pro svůj design a univerzálnost v casual stylu.</li>
-      <li><strong>1080:</strong> Vysoce výkonná běžecká bota s pokročilou technologií tlumení Fresh Foam.</li>
+      <li><strong>990:</strong> Jeden z nejikoničtějších modelů, vyráběný v USA s důrazem na kvalitu.</li>
+      <li><strong>574:</strong> Klasický model s retro designem.</li>
+      <li><strong>1080:</strong> Vysoce výkonná běžecká bota s pokročilou technologií odpružení.</li>
     </ul>
-    <h3>Technologie</h3>
-    <p>New Balance investuje do pokročilých technologií, jako je Fresh Foam – lehká pěna, která poskytuje měkký a přitom stabilní došlap, nebo technologie ABZORB pro efektivní tlumení nárazů.</p>
     <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" alt="New Balance boty" />
   </section>
 
@@ -295,34 +174,23 @@
     <h3>Základní údržba</h3>
     <ul>
       <li>Pravidelně odstraňujte špínu a prach jemným kartáčem nebo vlhkým hadříkem.</li>
-      <li>Pro textilní boty používejte speciální čističe na tenisky, které nepoškozují materiál.</li>
-      <li>Kožené boty ošetřujte vhodným krémem nebo balzámem, aby zůstaly pružné a nepopraskaly.</li>
-      <li>Vyvarujte se sušení bot na přímém slunci nebo u zdrojů tepla, aby nedošlo k deformaci.</li>
+      <li>Pro textilní boty používejte speciální čističe na tenisky.</li>
+      <li>Kožené boty ošetřujte vhodným krémem nebo balzámem.</li>
+      <li>Vyvarujte se sušení bot na přímém slunci nebo u zdrojů tepla.</li>
     </ul>
     <h3>Odstranění skvrn a zápachu</h3>
-    <p>Skvrny od bahna, trávy nebo oleje lze odstranit speciálními odstraňovači nebo směsí vody a octa. Pro odstranění zápachu v botách pomůže jedlá soda, kterou nasypeme dovnitř a necháme působit přes noc.</p>
-    <h3>Uložení a skladování</h3>
-    <ul>
-      <li>Boty skladujte na suchém místě, ideálně v původních krabicích nebo speciálních obalech.</li>
-      <li>Při delším nepoužívání vložte do bot stélky nebo noviny, které udrží tvar.</li>
-      <li>Pravidelně kontrolujte podrážky a provádějte opravy, aby boty vydržely co nejdéle.</li>
-    </ul>
+    <p>Skvrny od bahna, trávy nebo oleje lze odstranit speciálními odstraňovači a pravidelnou údržbou zabráníte zápachu.</p>
   </section>
 
   <section id="tipy">
     <h2>Jak vybrat správné boty</h2>
     <h3>Typ bot podle aktivity</h3>
-    <p>Každý sport nebo aktivita vyžaduje jiný typ bot:</p>
     <ul>
       <li><strong>Běhání:</strong> Lehká, dobře tlumící obuv s dostatečnou podporou nohy.</li>
       <li><strong>Basketbal:</strong> Boty s pevnou podporou kotníku a skvělou přilnavostí podrážky.</li>
       <li><strong>Turistika:</strong> Odolné, voděodolné boty s dobrou podrážkou pro terén.</li>
       <li><strong>Casual / streetwear:</strong> Stylové a pohodlné boty pro každodenní nošení.</li>
     </ul>
-    <h3>Správná velikost a pohodlí</h3>
-    <p>Při výběru bot vždy zkoušejte oba boty, ideálně na konci dne, kdy je noha nejvíce nateklá. Měla by tam být malá rezerva před prsty a bota by neměla tlačit ani být příliš volná.</p>
-    <h3>Materiál a údržba</h3>
-    <p>Zvažte, jak moc jste ochotni se o boty starat. Kožené boty vyžadují více péče, zatímco syntetické a textilní modely jsou často snadnější na údržbu.</p>
   </section>
 </main>
 
@@ -331,32 +199,34 @@
 </footer>
 
 <script>
-  const navLinks = document.querySelectorAll('nav a');
   const sections = document.querySelectorAll('main section');
 
-  function showSection(id) {
-    sections.forEach(sec => {
-      if (sec.id === id) sec.classList.add('visible');
-      else sec.classList.remove('visible');
+  function updateVisibleSection() {
+    const scrollLeft = document.querySelector('main').scrollLeft;
+    const width = window.innerWidth;
+    sections.forEach(section => {
+      const offsetLeft = section.offsetLeft;
+      const distance = Math.abs(scrollLeft - offsetLeft);
+      if (distance < width / 2) {
+        section.classList.add('visible');
+      } else {
+        section.classList.remove('visible');
+      }
     });
   }
 
-  navLinks.forEach(link => {
+  const container = document.querySelector('main');
+  container.addEventListener('scroll', updateVisibleSection);
+
+  updateVisibleSection();
+
+  document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      showSection(targetId);
-      history.pushState(null, '', '#' + targetId);
+      const id = link.getAttribute('href').slice(1);
+      const section = document.getElementById(id);
+      section.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     });
-  });
-
-  // Show first section by default
-  showSection('nike');
-
-  // Show section on page load if hash present
-  window.addEventListener('load', () => {
-    const hash = location.hash.replace('#', '');
-    if (hash) showSection(hash);
   });
 </script>
 
