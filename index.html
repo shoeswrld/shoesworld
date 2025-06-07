@@ -2,24 +2,47 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Můj první web</title>
+  <title>Vše o teniskách</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+    header { text-align: center; }
+    nav a { margin: 0 10px; }
+    article { margin-top: 20px; padding: 10px; border-bottom: 1px solid #ccc; }
+  </style>
 </head>
 <body>
-  <h1>Ahoj světe!</h1>
-  <p>Toto je moje první stránka hostovaná na GitHubu.</p>
+  <header>
+    <h1>Vše o botách</h1>
+    <p>Informace, recenze a tipy pro milovníky tenisek</p>
+    <nav>
+      <a href="#nike">Nike</a>
+      <a href="#adidas">Adidas</a>
+      <a href="#affil">Doporučujeme</a>
+    </nav>
+  </header>
 
-  <!-- Tady můžeš vložit kód z AdSense -->
-  <!-- Např.:
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-XXXXXXXXXXXX"
-       data-ad-slot="XXXXXXXXXX"
-       data-ad-format="auto"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  -->
+  <article id="nike">
+    <h2>Nike Air Max</h2>
+    <p>Nike Air Max jsou známé svou pohodlností a výrazným designem. Skvělé jak do města, tak na sport.</p>
+    <p><strong>Affiliate odkaz:</strong> <a href="https://example.com" target="_blank">Koupit na e-shopu</a></p>
+  </article>
 
+  <article id="adidas">
+    <h2>Adidas Ultraboost</h2>
+    <p>Výborné odpružení, ideální na běhání. Velmi oblíbené i jako lifestyle obuv.</p>
+    <p><strong>Doporučení:</strong> Zkus si je osobně vyzkoušet – často padnou jinak než běžné Adidas boty.</p>
+  </article>
+
+  <article id="affil">
+    <h2>Doporučujeme</h2>
+    <ul>
+      <li><a href="https://affil.example.com" target="_blank">Footshop – nové modely</a></li>
+      <li><a href="https://affil2.example.com" target="_blank">Heureka – srovnání cen</a></li>
+    </ul>
+  </article>
+
+  <footer>
+    <p>© 2025 Vše o botách | Jen pro informační účely</p>
+  </footer>
 </body>
 </html>
