@@ -62,6 +62,12 @@
       width: 100%;
       opacity: 0;
       visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    }
+
+    .card.fade-out {
+      opacity: 0;
+      visibility: hidden;
       transition: opacity 0.5s ease;
     }
 
@@ -69,6 +75,7 @@
       opacity: 1;
       visibility: visible;
       position: relative;
+      transition: opacity 0.5s ease;
     }
 
     footer {
@@ -159,16 +166,25 @@
   <script>
     function showSection(id) {
       const sections = document.querySelectorAll('.card');
+      let activeSection = null;
+
       sections.forEach(section => {
-        section.classList.remove('active');
+        if (section.classList.contains('active')) {
+          section.classList.remove('active');
+          section.classList.add('fade-out');
+          activeSection = section;
+        }
       });
 
       setTimeout(() => {
+        if (activeSection) {
+          activeSection.classList.remove('fade-out');
+        }
         const target = document.getElementById(id);
         if (target) {
           target.classList.add('active');
         }
-      }, 50);
+      }, 500); // počká, až skončí fade-out
     }
   </script>
 
