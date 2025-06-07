@@ -12,6 +12,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f5f5;
       color: #333;
+      overflow-x: hidden;
     }
 
     header {
@@ -48,34 +49,33 @@
       padding: 0 20px;
       position: relative;
       min-height: 300px;
+      overflow: hidden;
     }
 
     .card {
       background-color: #fff;
       padding: 25px;
-      margin-bottom: 30px;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       position: absolute;
       top: 0;
-      left: 0;
+      left: 100%;
       width: 100%;
       opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0s linear 0.5s;
-    }
-
-    .card.fade-out {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease;
+      transition: all 0.6s ease;
     }
 
     .card.active {
+      left: 0;
       opacity: 1;
-      visibility: visible;
-      position: relative;
-      transition: opacity 0.5s ease;
+      z-index: 2;
+    }
+
+    .card.exit {
+      left: -100%;
+      opacity: 0;
+      transition: all 0.6s ease;
+      z-index: 1;
     }
 
     footer {
@@ -164,27 +164,25 @@
   </footer>
 
   <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('.card');
-      let activeSection = null;
+    let currentId = 'nike';
 
-      sections.forEach(section => {
-        if (section.classList.contains('active')) {
-          section.classList.remove('active');
-          section.classList.add('fade-out');
-          activeSection = section;
-        }
-      });
+    function showSection(id) {
+      if (id === currentId) return;
+
+      const current = document.getElementById(currentId);
+      const next = document.getElementById(id);
+
+      current.classList.remove('active');
+      current.classList.add('exit');
+
+      next.style.left = '100%';
+      next.classList.add('active');
 
       setTimeout(() => {
-        if (activeSection) {
-          activeSection.classList.remove('fade-out');
-        }
-        const target = document.getElementById(id);
-        if (target) {
-          target.classList.add('active');
-        }
-      }, 500); // počká, až skončí fade-out
+        current.classList.remove('exit');
+        next.style.left = '0';
+        currentId = id;
+      }, 600);
     }
   </script>
 
