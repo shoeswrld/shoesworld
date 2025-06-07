@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Vše o botách</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f5f5;
       color: #333;
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -20,6 +22,9 @@
       color: #fff;
       padding: 30px 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav {
@@ -29,6 +34,9 @@
       justify-content: center;
       gap: 15px;
       padding: 12px;
+      position: sticky;
+      top: 90px; /* header height + padding */
+      z-index: 999;
     }
 
     nav a {
@@ -37,6 +45,7 @@
       padding: 8px 14px;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
@@ -46,43 +55,22 @@
     main {
       max-width: 900px;
       margin: 30px auto;
-      padding: 0 20px;
-      position: relative;
-      min-height: 300px;
-      overflow: hidden;
+      padding: 0 20px 60px;
     }
 
-    .card {
+    section {
       background-color: #fff;
       padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      position: absolute;
-      top: 0;
-      left: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: all 0.6s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      margin-bottom: 30px;
     }
 
-    .card.active {
-      left: 0;
-      opacity: 1;
-      z-index: 2;
-    }
-
-    .card.exit {
-      left: -100%;
-      opacity: 0;
-      transition: all 0.6s ease;
-      z-index: 1;
-    }
-
-    .card img {
+    section img {
       max-width: 100%;
       border-radius: 8px;
       margin-top: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     footer {
@@ -95,6 +83,7 @@
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
+        top: 70px;
       }
     }
   </style>
@@ -107,16 +96,16 @@
   </header>
 
   <nav>
-    <a onclick="showSection('nike')">Nike</a>
-    <a onclick="showSection('adidas')">Adidas</a>
-    <a onclick="showSection('puma')">Puma</a>
-    <a onclick="showSection('newbalance')">New Balance</a>
-    <a onclick="showSection('udrzba')">Údržba</a>
-    <a onclick="showSection('tipy')">Výběr bot</a>
+    <a href="#nike">Nike</a>
+    <a href="#adidas">Adidas</a>
+    <a href="#puma">Puma</a>
+    <a href="#newbalance">New Balance</a>
+    <a href="#udrzba">Údržba</a>
+    <a href="#tipy">Výběr bot</a>
   </nav>
 
   <main>
-    <div class="card active" id="nike">
+    <section id="nike">
       <h2>Nike – legenda mezi značkami</h2>
       <p><strong>Historie:</strong> Založena jako "Blue Ribbon Sports" v roce 1964, přejmenována na Nike v roce 1971 podle řecké bohyně vítězství.</p>
       <ul>
@@ -125,10 +114,10 @@
         <li><strong>Dunk</strong> – basketbalový původ, dnes lifestyle</li>
       </ul>
       <p><strong>Co chystají:</strong> Nike připravuje nové barevné varianty Air Max 1 '86 a spolupráci s Travisem Scottem.</p>
-      <img src="https://images.unsplash.com/photo-1600180758890-e60d34796c4c?auto=format&fit=crop&w=800&q=80" alt="Nike boty">
-    </div>
+      <img src="https://images.unsplash.com/photo-1600180758890-e60d34796c4c?auto=format&fit=crop&w=800&q=80" alt="Nike boty" />
+    </section>
 
-    <div class="card" id="adidas">
+    <section id="adidas">
       <h2>Adidas – tradice a inovace</h2>
       <p><strong>Historie:</strong> Založen v roce 1949 Adi Dasslerem v Německu. Jedna z největších sportovních značek na světě.</p>
       <ul>
@@ -137,10 +126,10 @@
         <li><strong>Stan Smith</strong> – minimalistická elegance</li>
       </ul>
       <p><strong>Co chystají:</strong> Nové modely s recyklovanými materiály a spolupráce s Y-3 a Gucci.</p>
-      <img src="https://images.unsplash.com/photo-1585386959984-a4155224b4c2?auto=format&fit=crop&w=800&q=80" alt="Adidas boty">
-    </div>
+      <img src="https://images.unsplash.com/photo-1585386959984-a4155224b4c2?auto=format&fit=crop&w=800&q=80" alt="Adidas boty" />
+    </section>
 
-    <div class="card" id="puma">
+    <section id="puma">
       <h2>Puma – sportovní síla</h2>
       <p><strong>Historie:</strong> Oddělení od Adidasu v roce 1948. Značka známá pro sportovní výkonnost i módu.</p>
       <ul>
@@ -149,10 +138,10 @@
         <li><strong>Future Rider</strong> – retro vzhled</li>
       </ul>
       <p><strong>Co chystají:</strong> Kolaborace s BMW, nová řada RS-X Evolved.</p>
-      <img src="https://images.unsplash.com/photo-1610535533511-82a0b92e9f42?auto=format&fit=crop&w=800&q=80" alt="Puma boty">
-    </div>
+      <img src="https://images.unsplash.com/photo-1610535533511-82a0b92e9f42?auto=format&fit=crop&w=800&q=80" alt="Puma boty" />
+    </section>
 
-    <div class="card" id="newbalance">
+    <section id="newbalance">
       <h2>New Balance – kvalita a pohodlí z USA</h2>
       <p><strong>Historie:</strong> Založena v roce 1906 v Bostonu. Od ortopedických vložek až po nejpohodlnější tenisky.</p>
       <ul>
@@ -161,10 +150,10 @@
         <li><strong>327</strong> – moderní silueta s retro nádechem</li>
       </ul>
       <p><strong>Co chystají:</strong> Nové barvy modelů Fresh Foam, spolupráce s Aimé Leon Dore a JJJJound.</p>
-      <img src="https://images.unsplash.com/photo-1600185366997-4f2695c7ba26?auto=format&fit=crop&w=800&q=80" alt="New Balance boty">
-    </div>
+      <img src="https://images.unsplash.com/photo-1600185366997-4f2695c7ba26?auto=format&fit=crop&w=800&q=80" alt="New Balance boty" />
+    </section>
 
-    <div class="card" id="udrzba">
+    <section id="udrzba">
       <h2>Jak se starat o tenisky?</h2>
       <ul>
         <li>Čisti je měkkým kartáčem a teplou vodou</li>
@@ -172,9 +161,9 @@
         <li>Nedávej do pračky</li>
         <li>Skladuj je v suchu s napínákem</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card" id="tipy">
+    <section id="tipy">
       <h2>Jak vybrat správné boty?</h2>
       <ul>
         <li>Rozhodni se, jestli chceš styl nebo sport</li>
@@ -182,35 +171,12 @@
         <li>Pohodlí je důležitější než vzhled</li>
         <li>Vložky mohou výrazně pomoct</li>
       </ul>
-    </div>
+    </section>
   </main>
 
   <footer>
     © 2025 Vše o botách | Tento web je pouze informativní
   </footer>
-
-  <script>
-    let currentId = 'nike';
-
-    function showSection(id) {
-      if (id === currentId) return;
-
-      const current = document.getElementById(currentId);
-      const next = document.getElementById(id);
-
-      current.classList.remove('active');
-      current.classList.add('exit');
-
-      next.style.left = '100%';
-      next.classList.add('active');
-
-      setTimeout(() => {
-        current.classList.remove('exit');
-        next.style.left = '0';
-        currentId = id;
-      }, 600);
-    }
-  </script>
 
 </body>
 </html>
