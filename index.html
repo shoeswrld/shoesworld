@@ -12,7 +12,6 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f5f5;
       color: #333;
-      line-height: 1.6;
     }
 
     header {
@@ -36,7 +35,7 @@
       text-decoration: none;
       padding: 8px 14px;
       border-radius: 5px;
-      transition: background-color 0.3s;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -45,25 +44,21 @@
 
     main {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 30px auto;
       padding: 0 20px;
     }
 
     .card {
       background-color: #fff;
       padding: 25px;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      display: none;
     }
 
-    .card h2 {
-      margin-top: 0;
-      color: #222;
-    }
-
-    .card ul {
-      padding-left: 20px;
+    .card.active {
+      display: block;
     }
 
     footer {
@@ -88,70 +83,78 @@
   </header>
 
   <nav>
-    <a href="#nike">Nike</a>
-    <a href="#adidas">Adidas</a>
-    <a href="#puma">Puma</a>
-    <a href="#udrzba">Údržba</a>
-    <a href="#tipy">Výběr bot</a>
+    <a onclick="showSection('nike')">Nike</a>
+    <a onclick="showSection('adidas')">Adidas</a>
+    <a onclick="showSection('puma')">Puma</a>
+    <a onclick="showSection('udrzba')">Údržba</a>
+    <a onclick="showSection('tipy')">Výběr bot</a>
   </nav>
 
   <main>
-
-    <div class="card" id="nike">
+    <div class="card active" id="nike">
       <h2>Nike – legenda mezi značkami</h2>
       <p>Společnost Nike vznikla v roce 1964 jako "Blue Ribbon Sports". Až v roce 1971 získala dnešní jméno podle řecké bohyně vítězství. Mezi nejznámější modely patří:</p>
       <ul>
         <li><strong>Air Max</strong> – ikonické s viditelnou vzduchovou bublinou</li>
-        <li><strong>Air Force 1</strong> – klasika ulice, velmi oblíbené mezi mladými</li>
-        <li><strong>Dunk</strong> – původně basketbalová bota, dnes lifestyle hit</li>
+        <li><strong>Air Force 1</strong> – klasika ulice</li>
+        <li><strong>Dunk</strong> – původně basketbalová, dnes lifestyle</li>
       </ul>
     </div>
 
     <div class="card" id="adidas">
       <h2>Adidas – tradice a inovace</h2>
-      <p>Německá značka založená v roce 1949 Adi Dasslerem. Adidas je známý jak sportovním, tak městským stylem. Mezi top modely patří:</p>
+      <p>Německá značka založená v roce 1949 Adi Dasslerem. Mezi top modely patří:</p>
       <ul>
-        <li><strong>Ultraboost</strong> – super pohodlné díky pěně Boost</li>
-        <li><strong>Superstar</strong> – bílá klasika s černými pruhy</li>
-        <li><strong>Stan Smith</strong> – minimalistické a stylové</li>
+        <li><strong>Ultraboost</strong> – pohodlné díky pěně Boost</li>
+        <li><strong>Superstar</strong> – bílá klasika</li>
+        <li><strong>Stan Smith</strong> – minimalistické</li>
       </ul>
     </div>
 
     <div class="card" id="puma">
-      <h2>Puma – sportovní síla s historií</h2>
-      <p>Vznikla jako rozdělení původní firmy Dasslerů (bratr Adi založil Adidas). Puma se zaměřuje na výkonnostní boty i spolupráce se známými osobnostmi (např. Rihanna).</p>
+      <h2>Puma – sportovní síla</h2>
+      <p>Vznikla jako rozdělení firmy Dasslerů. Puma kombinuje sport a styl:</p>
       <ul>
         <li><strong>Suede Classic</strong> – streetwear legenda</li>
-        <li><strong>RS-X</strong> – moderní, robustní a barevné</li>
-        <li><strong>Future Rider</strong> – retro styl s pohodlím</li>
+        <li><strong>RS-X</strong> – robustní a barevné</li>
+        <li><strong>Future Rider</strong> – retro styl</li>
       </ul>
     </div>
 
     <div class="card" id="udrzba">
       <h2>Jak se starat o tenisky?</h2>
       <ul>
-        <li>Čisti je pravidelně měkkým kartáčem a teplou vodou</li>
-        <li>Používej impregnaci – hlavně u semiše</li>
-        <li>Nedávej je do pračky – může poškodit strukturu</li>
-        <li>Skladuj je na suchém místě, nejlépe s napínákem</li>
+        <li>Čisti je měkkým kartáčem a teplou vodou</li>
+        <li>Používej impregnaci</li>
+        <li>Nedávej do pračky</li>
+        <li>Skladuj je v suchu s napínákem</li>
       </ul>
     </div>
 
     <div class="card" id="tipy">
-      <h2>Jak vybrat ty správné boty?</h2>
+      <h2>Jak vybrat správné boty?</h2>
       <ul>
-        <li>Rozhodni se: budeš je nosit každý den, nebo jen občas?</li>
-        <li>Značky se liší střihem – vždy zkoušej</li>
-        <li>Neřiď se jen vzhledem – pohodlí je důležité</li>
-        <li>Vyplatí se investovat do kvalitní vložky</li>
+        <li>Rozhodni se, jestli chceš styl nebo sport</li>
+        <li>Každá značka má jiný střih</li>
+        <li>Pohodlí je důležitější než vzhled</li>
+        <li>Vložky mohou výrazně pomoct</li>
       </ul>
     </div>
-
   </main>
 
   <footer>
-    © 2025 Vše o botách | Tento web je pouze informativní, bez reklam
+    © 2025 Vše o botách | Tento web je pouze informativní
   </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.card');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
