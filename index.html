@@ -10,35 +10,32 @@
       font-family: "Segoe UI", sans-serif;
       background: #f5f5f5;
       color: #333;
+      overflow-x: hidden;
     }
-
     nav {
       position: sticky;
       top: 0;
-      background: #ffffff;
+      background: #fff;
       border-bottom: 1px solid #ddd;
       z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 12px;
-      padding: 10px;
+      gap: 10px;
+      padding: 10px 0;
     }
-
     nav a {
       text-decoration: none;
       color: #444;
       background: #e0e0e0;
       padding: 8px 16px;
       border-radius: 20px;
-      transition: all 0.3s;
+      transition: background 0.3s;
       font-weight: bold;
     }
-
     nav a:hover {
       background: #f97316;
-      color: white;
+      color: #fff;
     }
-
     main {
       display: flex;
       overflow-x: auto;
@@ -46,11 +43,10 @@
       scroll-behavior: smooth;
       height: 100vh;
     }
-
     section {
       flex: 0 0 100vw;
       scroll-snap-align: start;
-      background: white;
+      background: #fff;
       margin: 5px;
       padding: 40px;
       box-sizing: border-box;
@@ -59,37 +55,32 @@
       transition: opacity 0.4s ease;
       overflow-y: auto;
     }
-
     section.visible {
       opacity: 1;
     }
-
     h2 {
       font-size: 2rem;
       color: #f97316;
       margin-bottom: 20px;
     }
-
     h3 {
       margin-top: 20px;
       font-size: 1.2rem;
       color: #444;
     }
-
-    ul {
-      padding-left: 20px;
-    }
-
     p, li {
       font-size: 1rem;
       line-height: 1.6;
+      color: #555;
     }
-
+    ul {
+      padding-left: 20px;
+    }
     footer {
       background: #222;
-      color: white;
+      color: #fff;
       text-align: center;
-      padding: 10px;
+      padding: 10px 0;
       font-size: 0.9rem;
     }
   </style>
@@ -109,70 +100,104 @@
   <main>
     <section id="uvod" class="visible">
       <h2>Vše o botách</h2>
-      <p>Boty nejsou jen ochrana nohou – jsou vyjádřením stylu, pohodlí a technologie. Ať už jde o sport, běžné nošení nebo módu, správné boty mohou udělat velký rozdíl.</p>
-      <p>V našem průvodci se dozvíte vše o nejznámějších značkách, historii bot, údržbě i tipy, jak si vybrat ty nejlepší boty právě pro vás.</p>
-      <p>Budeme se věnovat ikonickým značkám jako Nike, Adidas, Puma a New Balance, poradíme vám, jak pečovat o vaše boty a jak vybrat ty správné pro různé aktivity. Tak pojďme na to!</p>
+      <p>Boty jsou víc než jen nutnost – jsou odrazem našeho stylu, pohodlí i technologického pokroku. Dnes existuje tolik typů, materiálů a konstrukčních přístupů, že je těžké se v tom vyznat. Tento průvodce ti pomůže pochopit, jak jednotlivé značky vznikly, jaké technologie používají a podle čeho vybírat boty pro konkrétní aktivity.</p>
+      <p>Projdeme ikonické značky, jejich nejzásadnější modely, moderní inovace a také praktické tipy na údržbu a výběr té pravé obuvi pro běh, sport, turistiku i každodenní nošení.</p>
     </section>
 
     <section id="nike">
       <h2>Nike</h2>
-      <p><strong>Historie:</strong> Založeno v roce 1964 jako Blue Ribbon Sports, přejmenováno na Nike v roce 1971. Ikonické logo „Swoosh“ a revoluční modely jako Air Max a Air Force 1 z něj udělaly světového lídra.</p>
-      <h3>Nové modely:</h3>
+      <p><strong>Historie:</strong> Založeno v roce 1964 jako Blue Ribbon Sports, přejmenováno na Nike v roce 1971. Ikonická „Swoosh“ značka a modely jako Cortez, Air Max (1987) a Air Force 1 (1982) formovaly celý průmysl.</p>
+      <h3>Technologie:</h3>
       <ul>
-        <li>Nike Air Max Pulse (2025)</li>
-        <li>Nike Zoom Fly 6</li>
+        <li><strong>Air:</strong> Vzduchové polštářky pro tlumení nárazů.</li>
+        <li><strong>Flyknit:</strong> Lehký bezešvý svršek pro perfektní fit.</li>
+        <li><strong>React:</strong> Pěna s vysokou návratností energie.</li>
       </ul>
+      <h3>Ikonické modely:</h3>
+      <ul>
+        <li>Air Max 1, Air Max 90, Air Max Pulse</li>
+        <li>Air Force 1 Low/High</li>
+        <li>Nike Dunk, SB Dunk</li>
+      </ul>
+      <h3>Novinky 2025:</h3>
+      <p>Nike Air Zoom Alphafly Next% 3, nová edice Air Max 97 Mirror.</p>
     </section>
 
     <section id="adidas">
       <h2>Adidas</h2>
-      <p><strong>Historie:</strong> Založen Adolfem Dasslerem v Německu roku 1949. Adidas je známý svou technologií Boost a modely jako Superstar, Stan Smith nebo Ultraboost.</p>
-      <h3>Novinky:</h3>
+      <p><strong>Historie:</strong> Založen 1949 Adi Dasslerem. Přinesl boty pro Olympijské hry 1952 a kultovní tři pruhy se staly symbolem kvality.</p>
+      <h3>Technologie:</h3>
       <ul>
-        <li>Adidas Ultraboost Light</li>
-        <li>Adidas Gazelle Indoor</li>
+        <li><strong>Boost:</strong> Pěna z tisíců kapslí pro maximální energie návrat.</li>
+        <li><strong>Primeknit:</strong> Prodyšný a pružný svršek.</li>
+        <li><strong>Continental:</strong> Guma z pneumatik pro lepší trakci.</li>
       </ul>
+      <h3>Ikonické modely:</h3>
+      <ul>
+        <li>Superstar, Stan Smith, Campus</li>
+        <li>Ultraboost, NMD, Gazelle</li>
+      </ul>
+      <h3>Novinky 2025:</h3>
+      <p>Adidas Futurecraft 4D v nové barevné paletě, Y-3 Quantum Boost.</p>
     </section>
 
     <section id="puma">
       <h2>Puma</h2>
-      <p><strong>Historie:</strong> Vznikla v roce 1948, když se bratr Adolfa Dasslera – Rudolf – oddělil a založil vlastní značku. Puma je známá sportovní elegancí.</p>
-      <h3>Oblíbené modely:</h3>
+      <p><strong>Historie:</strong> Vznikla 1948 po rozdělení rodiny Dasslerů. Rudolf Dassler zaměřil značku na design i výkon.</p>
+      <h3>Technologie:</h3>
       <ul>
-        <li>Puma Suede</li>
-        <li>Puma RS-X</li>
+        <li><strong>Nitro:</strong> Pokročilé tlumení pro rychlý běh.</li>
+        <li><strong>ProFoam:</strong> Výkonná EVA pěna.</li>
       </ul>
+      <h3>Ikonické modely:</h3>
+      <ul>
+        <li>Suede, Clyde, Roma</li>
+        <li>RS-X, Future Rider</li>
+      </ul>
+      <h3>Novinky 2025:</h3>
+      <p>Puma MB.02 – další generace basketbalové edice od LaMela Balla.</p>
     </section>
 
     <section id="newbalance">
       <h2>New Balance</h2>
-      <p><strong>Historie:</strong> Americká značka založená v roce 1906. Proslavila se pohodlností, čísleným označením modelů (574, 990) a výrobou v USA a UK.</p>
-      <h3>Tipy:</h3>
+      <p><strong>Historie:</strong> Od ortopedických vložek (1906) k prémiovým teniskám. Číselné označení modelů (990, 574) znamená řadu kvality a výkonu.</p>
+      <h3>Technologie:</h3>
       <ul>
-        <li>Model 990v6 je ideální pro každodenní nošení</li>
-        <li>Model 1080v13 – pro běžce s důrazem na tlumení</li>
+        <li><strong>Fresh Foam:</strong> Jednorázově tvarovaná tlumící pěna.</li>
+        <li><strong>ABZORB:</strong> Efektivní tlumení nárazů.</li>
       </ul>
+      <h3>Ikonické modely:</h3>
+      <ul>
+        <li>990, 574, 1080</li>
+        <li>327, 530</li>
+      </ul>
+      <h3>Novinky 2025:</h3>
+      <p>New Balance 990v7, kolaborace s Aimé Leon Dore – limitovaná edice.</p>
     </section>
 
     <section id="udrzba">
       <h2>Údržba bot</h2>
+      <h3>Základní péče:</h3>
       <ul>
-        <li>Čistěte jemným kartáčem a vlhkým hadříkem</li>
-        <li>Vyhněte se sušení na přímém slunci</li>
-        <li>Impregnujte pravidelně pro ochranu</li>
-        <li>Perte pouze ručně nebo vůbec</li>
+        <li>Očisti jemným kartáčem a mýdlovým roztokem.</li>
+        <li>Impregnuj dle materiálu (textil vs. semiš vs. kůže).</li>
+        <li>Suš na vzduchu, ne na topení ani slunci.</li>
       </ul>
+      <h3>Odstranění skvrn:</h3>
+      <p>Bahno, tráva a olej odstraň speciálními čističi nebo octovou vodou. Na suchou zápach pomůže jedlá soda.</p>
     </section>
 
     <section id="vyber">
       <h2>Výběr bot</h2>
+      <h3>Podle aktivity:</h3>
       <ul>
-        <li><strong>Běžecké:</strong> Lehkost, prodyšnost, tlumení (např. HOKA, Nike Pegasus)</li>
-        <li><strong>Basketbalové:</strong> Stabilita a podpora kotníku</li>
-        <li><strong>Turistické:</strong> Odolnost, nepromokavost, podešev s gripem</li>
-        <li><strong>Casual:</strong> Styl a pohodlí (např. Vans, Converse, NB)</li>
-        <li><strong>Letní sandály:</strong> Lehkost a prodyšnost</li>
+        <li>Běhání: tlumení a prodyšnost.</li>
+        <li>Basketbal: stabilita kotníku.</li>
+        <li>Turistika: odolnost a trakce.</li>
+        <li>Casual: design a pohodlí.</li>
       </ul>
+      <h3>Tipy:</h3>
+      <p>Zkoušej boty na konci dne, kdy jsou nohy nejvíc nateklé, a vždy vyzkoušej oba boty pro jistotu správné velikosti.</p>
     </section>
   </main>
 
@@ -181,31 +206,22 @@
   </footer>
 
   <script>
-    const sections = document.querySelectorAll('main section');
-
-    function updateVisibleSection() {
-      const scrollLeft = document.querySelector('main').scrollLeft;
-      const width = window.innerWidth;
-      sections.forEach(section => {
-        const offsetLeft = section.offsetLeft;
-        const distance = Math.abs(scrollLeft - offsetLeft);
-        if (distance < width / 2) {
-          section.classList.add('visible');
-        } else {
-          section.classList.remove('visible');
-        }
+    const sections = document.querySelectorAll("main section");
+    function updateVisible() {
+      const scrollX = document.querySelector("main").scrollLeft;
+      const w = window.innerWidth;
+      sections.forEach(sec => {
+        const dist = Math.abs(scrollX - sec.offsetLeft);
+        sec.classList.toggle("visible", dist < w/2);
       });
     }
-
-    document.querySelector('main').addEventListener('scroll', updateVisibleSection);
-    updateVisibleSection();
-
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', e => {
+    document.querySelector("main").addEventListener("scroll", updateVisible);
+    updateVisible();
+    document.querySelectorAll("nav a").forEach(a=>{
+      a.addEventListener("click", e=>{
         e.preventDefault();
-        const id = link.getAttribute('href').slice(1);
-        const section = document.getElementById(id);
-        section.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+        document.getElementById(a.getAttribute("href").slice(1))
+          .scrollIntoView({behavior:"smooth", inline:"start"});
       });
     });
   </script>
