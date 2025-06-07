@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vše o botách – horizontální scroll s fade</title>
+<title>Vše o botách – horizontální scroll s fade (jednodušší design)</title>
 <style>
   body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    background: #f9f9f9;
     color: #333;
     overflow-x: hidden;
   }
@@ -16,25 +16,25 @@
   header, nav {
     position: sticky;
     top: 0;
-    background: #1f2937;
+    background: #333;
     color: white;
     z-index: 1000;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
   }
   nav {
-    background: #334155;
+    background: #444;
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
   }
   nav a {
-    color: #e2e8f0;
+    color: #ddd;
     text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 20px;
+    padding: 8px 12px;
+    border-radius: 15px;
     font-weight: 600;
-    background: #475569;
+    background: #555;
     transition: background-color 0.3s;
   }
   nav a:hover {
@@ -46,7 +46,7 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 90px);
     scroll-behavior: smooth;
   }
 
@@ -54,13 +54,12 @@
     flex: 0 0 100vw;
     scroll-snap-align: start;
     background: white;
-    margin: 0 10px;
-    padding: 20px 30px;
+    margin: 0 5px;
+    padding: 20px 25px;
     box-sizing: border-box;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border-radius: 12px;
     opacity: 0.3;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.4s ease;
     overflow-y: auto;
   }
 
@@ -68,40 +67,36 @@
     opacity: 1;
   }
 
-  section h2 {
+  h2 {
     color: #f97316;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-top: 0;
   }
-  section h3 {
-    margin-top: 20px;
-    color: #334155;
+
+  h3 {
+    margin-top: 15px;
+    color: #555;
   }
-  section p, section ul li {
-    color: #475569;
-    font-size: 1.1rem;
-    line-height: 1.5;
+
+  p, ul li {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 
   ul {
     padding-left: 20px;
   }
-  ul li {
-    margin-bottom: 10px;
-  }
 
-  img {
-    max-width: 100%;
-    border-radius: 14px;
-    margin-top: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  ul li {
+    margin-bottom: 8px;
   }
 
   footer {
-    background: #1f2937;
+    background: #333;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
     font-size: 0.9rem;
   }
 </style>
@@ -117,79 +112,71 @@
   <a href="#puma">Puma</a>
   <a href="#newbalance">New Balance</a>
   <a href="#udrzba">Údržba</a>
-  <a href="#tipy">Výběr bot</a>
+  <a href="#vyber">Výběr bot</a>
 </nav>
 
-<main id="container">
+<main>
   <section id="nike">
     <h2>Nike – legenda mezi značkami</h2>
-    <p><strong>Historie:</strong> Nike byla založena v roce 1964 jako Blue Ribbon Sports zakladateli Philipem Knightem a Billem Bowermanem. Od té doby se vypracovala na největší světovou značku sportovní obuvi a oblečení.</p>
+    <p><strong>Historie:</strong> Nike založili v roce 1964 Philip Knight a Bill Bowerman. Od té doby se stala největším výrobcem sportovní obuvi na světě.</p>
     <h3>Ikonické modely</h3>
     <ul>
-      <li><strong>Air Max:</strong> Poprvé představen v roce 1987, známý svým viditelným vzduchovým polštářem.</li>
-      <li><strong>Air Force 1:</strong> Kultovní basketbalová bota, která se stala módní ikonou.</li>
-      <li><strong>Dunk:</strong> Vyvinutá pro basketbal, dnes populární i ve streetwearu.</li>
+      <li>Air Max</li>
+      <li>Air Force 1</li>
+      <li>Dunk</li>
     </ul>
-    <img src="https://images.unsplash.com/photo-1600180758890-e60d34796c4c?auto=format&fit=crop&w=800&q=80" alt="Nike boty" />
   </section>
 
   <section id="adidas">
     <h2>Adidas – tradice a inovace</h2>
-    <p><strong>Historie:</strong> Adidas založil v roce 1949 Adolf Dassler a značka se rychle stala jedním z lídrů v oblasti sportovního vybavení díky inovacím a kvalitě.</p>
+    <p><strong>Historie:</strong> Adidas založil Adolf Dassler v roce 1949. Značka je známá díky svým inovacím a kvalitě.</p>
     <h3>Ikonické modely</h3>
     <ul>
-      <li><strong>Stan Smith:</strong> Kultovní tenisová bota s minimalistickým designem.</li>
-      <li><strong>Superstar:</strong> Původně basketbalová bota, známá svou gumovou špičkou.</li>
-      <li><strong>Ultraboost:</strong> Revoluční běžecká bota s extrémní pohodlností.</li>
+      <li>Stan Smith</li>
+      <li>Superstar</li>
+      <li>Ultraboost</li>
     </ul>
-    <img src="https://images.unsplash.com/photo-1552346154-98c4f3d8e28f?auto=format&fit=crop&w=800&q=80" alt="Adidas boty" />
   </section>
 
   <section id="puma">
     <h2>Puma – spojení sportu a stylu</h2>
-    <p><strong>Historie:</strong> Puma byla založena v roce 1948 Rudolfem Dasslerem, bratrem Adolfa Dasslera, a proslavila se sportovními botami s unikátním designem.</p>
+    <p><strong>Historie:</strong> Puma byla založena Rudolfem Dasslerem v roce 1948 a je známá svými unikátními designy.</p>
     <h3>Ikonické modely</h3>
     <ul>
-      <li><strong>Suede:</strong> Legendární model z 60. let, který ovlivnil streetwear.</li>
-      <li><strong>RS-X:</strong> Moderní silueta s futuristickým vzhledem.</li>
-      <li><strong>Clyde:</strong> Basketbalová bota pojmenovaná po Waltu Frazierovi.</li>
+      <li>Suede</li>
+      <li>RS-X</li>
+      <li>Clyde</li>
     </ul>
-    <img src="https://images.unsplash.com/photo-1596464716122-28d2f6f1082b?auto=format&fit=crop&w=800&q=80" alt="Puma boty" />
   </section>
 
   <section id="newbalance">
     <h2>New Balance – pohodlí a tradice</h2>
-    <p><strong>Historie:</strong> New Balance vznikl v roce 1906 jako výrobce ortopedických vložek a později se vypracoval na výrobce vysoce kvalitních sportovních bot.</p>
+    <p><strong>Historie:</strong> New Balance začal v roce 1906 a je známý pro pohodlné a kvalitní boty.</p>
     <h3>Ikonické modely</h3>
     <ul>
-      <li><strong>990:</strong> Jeden z nejikoničtějších modelů, vyráběný v USA s důrazem na kvalitu.</li>
-      <li><strong>574:</strong> Klasický model s retro designem.</li>
-      <li><strong>1080:</strong> Vysoce výkonná běžecká bota s pokročilou technologií odpružení.</li>
+      <li>990</li>
+      <li>574</li>
+      <li>1080</li>
     </ul>
-    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" alt="New Balance boty" />
   </section>
 
   <section id="udrzba">
-    <h2>Péče o boty – tipy a triky</h2>
-    <h3>Základní údržba</h3>
+    <h2>Údržba bot</h2>
     <ul>
-      <li>Pravidelně odstraňujte špínu a prach jemným kartáčem nebo vlhkým hadříkem.</li>
-      <li>Pro textilní boty používejte speciální čističe na tenisky.</li>
-      <li>Kožené boty ošetřujte vhodným krémem nebo balzámem.</li>
-      <li>Vyvarujte se sušení bot na přímém slunci nebo u zdrojů tepla.</li>
+      <li>Pravidelné čištění kartáčem nebo hadříkem.</li>
+      <li>Speciální čističe na textilní boty.</li>
+      <li>Kožené boty ošetřujte krémem.</li>
+      <li>Nesušte boty na přímém slunci.</li>
     </ul>
-    <h3>Odstranění skvrn a zápachu</h3>
-    <p>Skvrny od bahna, trávy nebo oleje lze odstranit speciálními odstraňovači a pravidelnou údržbou zabráníte zápachu.</p>
   </section>
 
-  <section id="tipy">
-    <h2>Jak vybrat správné boty</h2>
-    <h3>Typ bot podle aktivity</h3>
+  <section id="vyber">
+    <h2>Výběr bot</h2>
     <ul>
-      <li><strong>Běhání:</strong> Lehká, dobře tlumící obuv s dostatečnou podporou nohy.</li>
-      <li><strong>Basketbal:</strong> Boty s pevnou podporou kotníku a skvělou přilnavostí podrážky.</li>
-      <li><strong>Turistika:</strong> Odolné, voděodolné boty s dobrou podrážkou pro terén.</li>
-      <li><strong>Casual / streetwear:</strong> Stylové a pohodlné boty pro každodenní nošení.</li>
+      <li>Běžecké – lehké a tlumící</li>
+      <li>Basketbalové – s podporou kotníku</li>
+      <li>Turistické – odolné a voděodolné</li>
+      <li>Casual – stylové a pohodlné</li>
     </ul>
   </section>
 </main>
