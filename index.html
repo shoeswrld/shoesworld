@@ -64,6 +64,16 @@
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
       margin-bottom: 30px;
+      
+      /* Fade effect - start hidden */
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     section img {
@@ -177,6 +187,26 @@
   <footer>
     © 2025 Vše o botách | Tento web je pouze informativní
   </footer>
+
+  <script>
+    // Fade-in při scrollu pomocí Intersection Observer
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // efektní jednou
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
