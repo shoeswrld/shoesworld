@@ -2,47 +2,118 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Vše o teniskách</title>
+  <title>Vše o botách</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
-    header { text-align: center; }
-    nav a { margin: 0 10px; }
-    article { margin-top: 20px; padding: 10px; border-bottom: 1px solid #ccc; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #222;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Vše o botách</h1>
-    <p>Informace, recenze a tipy pro milovníky tenisek</p>
-    <nav>
-      <a href="#nike">Nike</a>
-      <a href="#adidas">Adidas</a>
-      <a href="#affil">Doporučujeme</a>
-    </nav>
+    <p>Recenze, tipy a info pro všechny sneakerheads</p>
   </header>
 
-  <article id="nike">
-    <h2>Nike Air Max</h2>
-    <p>Nike Air Max jsou známé svou pohodlností a výrazným designem. Skvělé jak do města, tak na sport.</p>
-    <p><strong>Affiliate odkaz:</strong> <a href="https://example.com" target="_blank">Koupit na e-shopu</a></p>
-  </article>
+  <nav>
+    <a href="#nike">Nike</a>
+    <a href="#adidas">Adidas</a>
+    <a href="#tipy">Tipy</a>
+  </nav>
 
-  <article id="adidas">
-    <h2>Adidas Ultraboost</h2>
-    <p>Výborné odpružení, ideální na běhání. Velmi oblíbené i jako lifestyle obuv.</p>
-    <p><strong>Doporučení:</strong> Zkus si je osobně vyzkoušet – často padnou jinak než běžné Adidas boty.</p>
-  </article>
+  <main>
+    <div class="card" id="nike">
+      <h2>Nike Air Max</h2>
+      <p>Ikonická řada bot s viditelným vzduchovým polštářkem. Air Max modely kombinují styl a pohodlí. Vhodné jak pro každodenní nošení, tak pro sběratele.</p>
+    </div>
 
-  <article id="affil">
-    <h2>Doporučujeme</h2>
-    <ul>
-      <li><a href="https://affil.example.com" target="_blank">Footshop – nové modely</a></li>
-      <li><a href="https://affil2.example.com" target="_blank">Heureka – srovnání cen</a></li>
-    </ul>
-  </article>
+    <div class="card" id="adidas">
+      <h2>Adidas Ultraboost</h2>
+      <p>Extrémně pohodlné díky Boost pěně. Ideální na běh i do města. Mnoho limitovaných edic, často spolupráce se známými značkami a designéry.</p>
+    </div>
+
+    <div class="card" id="tipy">
+      <h2>Jak si vybrat tenisky?</h2>
+      <ul>
+        <li>Zamysli se, na co je budeš používat – styl nebo sport?</li>
+        <li>Důležitá je velikost – různé značky mají různé střihy</li>
+        <li>Pozor na padělky – ověřuj si prodejce</li>
+      </ul>
+    </div>
+  </main>
 
   <footer>
-    <p>© 2025 Vše o botách | Jen pro informační účely</p>
+    © 2025 Vše o botách | Tento web je nezávislý a pouze informativní
   </footer>
+
 </body>
 </html>
