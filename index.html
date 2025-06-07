@@ -2,36 +2,35 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vše o botách – přejíždění sekcí</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vše o botách</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f5f5;
       color: #333;
-      overflow-x: hidden;
     }
 
     nav {
       position: sticky;
       top: 0;
-      background: #222;
-      color: white;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
       z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 10px;
-      padding: 12px 0;
+      gap: 12px;
+      padding: 10px;
     }
 
     nav a {
-      color: #ddd;
       text-decoration: none;
+      color: #444;
+      background: #e0e0e0;
       padding: 8px 16px;
-      background: #333;
       border-radius: 20px;
-      transition: background 0.3s;
+      transition: all 0.3s;
       font-weight: bold;
     }
 
@@ -44,18 +43,18 @@
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      height: 100vh;
       scroll-behavior: smooth;
+      height: 100vh;
     }
 
     section {
       flex: 0 0 100vw;
       scroll-snap-align: start;
       background: white;
-      margin: 0 5px;
-      padding: 40px 60px;
+      margin: 5px;
+      padding: 40px;
       box-sizing: border-box;
-      border-radius: 12px;
+      border-radius: 16px;
       opacity: 0.3;
       transition: opacity 0.4s ease;
       overflow-y: auto;
@@ -68,17 +67,12 @@
     h2 {
       font-size: 2rem;
       color: #f97316;
+      margin-bottom: 20px;
     }
 
     h3 {
       margin-top: 20px;
       font-size: 1.2rem;
-      color: #555;
-    }
-
-    p, ul li {
-      font-size: 1rem;
-      line-height: 1.5;
       color: #444;
     }
 
@@ -86,11 +80,16 @@
       padding-left: 20px;
     }
 
+    p, li {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     footer {
       background: #222;
       color: white;
       text-align: center;
-      padding: 10px 0;
+      padding: 10px;
       font-size: 0.9rem;
     }
   </style>
@@ -110,79 +109,69 @@
   <main>
     <section id="uvod" class="visible">
       <h2>Vše o botách</h2>
-      <p>
-        Boty nejsou jen ochrana nohou – jsou vyjádřením stylu, pohodlí a technologie. Ať už jde o sport, běžné nošení nebo módu, správné boty mohou udělat velký rozdíl.
-      </p>
-      <p>
-        V našem průvodci se dozvíte vše o nejznámějších značkách, historii bot, údržbě i tipy, jak si vybrat ty nejlepší boty právě pro vás.
-      </p>
-      <p>
-        Budeme se věnovat ikonickým značkám jako Nike, Adidas, Puma a New Balance, poradíme vám, jak pečovat o vaše boty a jak vybrat ty správné pro různé aktivity. Tak pojďme na to!
-      </p>
+      <p>Boty nejsou jen ochrana nohou – jsou vyjádřením stylu, pohodlí a technologie. Ať už jde o sport, běžné nošení nebo módu, správné boty mohou udělat velký rozdíl.</p>
+      <p>V našem průvodci se dozvíte vše o nejznámějších značkách, historii bot, údržbě i tipy, jak si vybrat ty nejlepší boty právě pro vás.</p>
+      <p>Budeme se věnovat ikonickým značkám jako Nike, Adidas, Puma a New Balance, poradíme vám, jak pečovat o vaše boty a jak vybrat ty správné pro různé aktivity. Tak pojďme na to!</p>
     </section>
 
     <section id="nike">
-      <h2>Nike – legenda mezi značkami</h2>
-      <p><strong>Historie:</strong> Založeno 1964 Philipem Knightem a Billem Bowermanem.</p>
-      <h3>Modely</h3>
+      <h2>Nike</h2>
+      <p><strong>Historie:</strong> Založeno v roce 1964 jako Blue Ribbon Sports, přejmenováno na Nike v roce 1971. Ikonické logo „Swoosh“ a revoluční modely jako Air Max a Air Force 1 z něj udělaly světového lídra.</p>
+      <h3>Nové modely:</h3>
       <ul>
-        <li>Air Max</li>
-        <li>Air Force 1</li>
-        <li>Dunk</li>
+        <li>Nike Air Max Pulse (2025)</li>
+        <li>Nike Zoom Fly 6</li>
       </ul>
     </section>
 
     <section id="adidas">
-      <h2>Adidas – tradice a inovace</h2>
-      <p><strong>Historie:</strong> Založil Adolf Dassler v roce 1949.</p>
-      <h3>Modely</h3>
+      <h2>Adidas</h2>
+      <p><strong>Historie:</strong> Založen Adolfem Dasslerem v Německu roku 1949. Adidas je známý svou technologií Boost a modely jako Superstar, Stan Smith nebo Ultraboost.</p>
+      <h3>Novinky:</h3>
       <ul>
-        <li>Stan Smith</li>
-        <li>Superstar</li>
-        <li>Ultraboost</li>
+        <li>Adidas Ultraboost Light</li>
+        <li>Adidas Gazelle Indoor</li>
       </ul>
     </section>
 
     <section id="puma">
-      <h2>Puma – sport a styl</h2>
-      <p><strong>Historie:</strong> Založil Rudolf Dassler v roce 1948.</p>
-      <h3>Modely</h3>
+      <h2>Puma</h2>
+      <p><strong>Historie:</strong> Vznikla v roce 1948, když se bratr Adolfa Dasslera – Rudolf – oddělil a založil vlastní značku. Puma je známá sportovní elegancí.</p>
+      <h3>Oblíbené modely:</h3>
       <ul>
-        <li>Suede</li>
-        <li>RS-X</li>
-        <li>Clyde</li>
+        <li>Puma Suede</li>
+        <li>Puma RS-X</li>
       </ul>
     </section>
 
     <section id="newbalance">
-      <h2>New Balance – pohodlí a výkon</h2>
-      <p><strong>Historie:</strong> Založeno 1906 v Bostonu.</p>
-      <h3>Modely</h3>
+      <h2>New Balance</h2>
+      <p><strong>Historie:</strong> Americká značka založená v roce 1906. Proslavila se pohodlností, čísleným označením modelů (574, 990) a výrobou v USA a UK.</p>
+      <h3>Tipy:</h3>
       <ul>
-        <li>990</li>
-        <li>574</li>
-        <li>1080</li>
+        <li>Model 990v6 je ideální pro každodenní nošení</li>
+        <li>Model 1080v13 – pro běžce s důrazem na tlumení</li>
       </ul>
     </section>
 
     <section id="udrzba">
       <h2>Údržba bot</h2>
       <ul>
-        <li>Pravidelné čištění</li>
-        <li>Impregnace proti vodě</li>
-        <li>Neprat v pračce (většinu modelů)</li>
-        <li>Skladovat v suchu</li>
+        <li>Čistěte jemným kartáčem a vlhkým hadříkem</li>
+        <li>Vyhněte se sušení na přímém slunci</li>
+        <li>Impregnujte pravidelně pro ochranu</li>
+        <li>Perte pouze ručně nebo vůbec</li>
       </ul>
     </section>
 
     <section id="vyber">
       <h2>Výběr bot</h2>
       <ul>
-        <li>Běžecké</li>
-        <li>Streetwear</li>
-        <li>Turistické</li>
-        <li>Basketbalové</li>
-        <li>Letní sandály</li>
+        <li><strong>Běžecké:</strong> Lehkost, prodyšnost, tlumení (např. HOKA, Nike Pegasus)</li>
+        <li><strong>Basketbalové:</strong> Stabilita a podpora kotníku</li>
+        <li><strong>Turistické:</strong> Odolnost, nepromokavost, podešev s gripem</li>
+        <li><strong>Casual:</strong> Styl a pohodlí (např. Vans, Converse, NB)</li>
+        <li><strong>Letní sandály:</strong> Lehkost a prodyšnost</li>
       </ul>
     </section>
   </main>
