@@ -78,6 +78,13 @@
       z-index: 1;
     }
 
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
     footer {
       text-align: center;
       font-size: 14px;
@@ -103,6 +110,7 @@
     <a onclick="showSection('nike')">Nike</a>
     <a onclick="showSection('adidas')">Adidas</a>
     <a onclick="showSection('puma')">Puma</a>
+    <a onclick="showSection('newbalance')">New Balance</a>
     <a onclick="showSection('udrzba')">Údržba</a>
     <a onclick="showSection('tipy')">Výběr bot</a>
   </nav>
@@ -110,32 +118,50 @@
   <main>
     <div class="card active" id="nike">
       <h2>Nike – legenda mezi značkami</h2>
-      <p>Společnost Nike vznikla v roce 1964 jako "Blue Ribbon Sports". Až v roce 1971 získala dnešní jméno podle řecké bohyně vítězství. Mezi nejznámější modely patří:</p>
+      <p><strong>Historie:</strong> Založena jako "Blue Ribbon Sports" v roce 1964, přejmenována na Nike v roce 1971 podle řecké bohyně vítězství.</p>
       <ul>
-        <li><strong>Air Max</strong> – ikonické s viditelnou vzduchovou bublinou</li>
-        <li><strong>Air Force 1</strong> – klasika ulice</li>
-        <li><strong>Dunk</strong> – původně basketbalová, dnes lifestyle</li>
+        <li><strong>Air Max</strong> – s viditelnou vzduchovou bublinou</li>
+        <li><strong>Air Force 1</strong> – streetwear klasika</li>
+        <li><strong>Dunk</strong> – basketbalový původ, dnes lifestyle</li>
       </ul>
+      <p><strong>Co chystají:</strong> Nike připravuje nové barevné varianty Air Max 1 '86 a spolupráci s Travisem Scottem.</p>
+      <img src="https://images.unsplash.com/photo-1600180758890-e60d34796c4c?auto=format&fit=crop&w=800&q=80" alt="Nike boty">
     </div>
 
     <div class="card" id="adidas">
       <h2>Adidas – tradice a inovace</h2>
-      <p>Německá značka založená v roce 1949 Adi Dasslerem. Mezi top modely patří:</p>
+      <p><strong>Historie:</strong> Založen v roce 1949 Adi Dasslerem v Německu. Jedna z největších sportovních značek na světě.</p>
       <ul>
-        <li><strong>Ultraboost</strong> – pohodlné díky pěně Boost</li>
-        <li><strong>Superstar</strong> – bílá klasika</li>
-        <li><strong>Stan Smith</strong> – minimalistické</li>
+        <li><strong>Ultraboost</strong> – extrémní pohodlí</li>
+        <li><strong>Superstar</strong> – s gumovou špičkou</li>
+        <li><strong>Stan Smith</strong> – minimalistická elegance</li>
       </ul>
+      <p><strong>Co chystají:</strong> Nové modely s recyklovanými materiály a spolupráce s Y-3 a Gucci.</p>
+      <img src="https://images.unsplash.com/photo-1585386959984-a4155224b4c2?auto=format&fit=crop&w=800&q=80" alt="Adidas boty">
     </div>
 
     <div class="card" id="puma">
       <h2>Puma – sportovní síla</h2>
-      <p>Vznikla jako rozdělení firmy Dasslerů. Puma kombinuje sport a styl:</p>
+      <p><strong>Historie:</strong> Oddělení od Adidasu v roce 1948. Značka známá pro sportovní výkonnost i módu.</p>
       <ul>
         <li><strong>Suede Classic</strong> – streetwear legenda</li>
-        <li><strong>RS-X</strong> – robustní a barevné</li>
-        <li><strong>Future Rider</strong> – retro styl</li>
+        <li><strong>RS-X</strong> – robustní a moderní</li>
+        <li><strong>Future Rider</strong> – retro vzhled</li>
       </ul>
+      <p><strong>Co chystají:</strong> Kolaborace s BMW, nová řada RS-X Evolved.</p>
+      <img src="https://images.unsplash.com/photo-1610535533511-82a0b92e9f42?auto=format&fit=crop&w=800&q=80" alt="Puma boty">
+    </div>
+
+    <div class="card" id="newbalance">
+      <h2>New Balance – kvalita a pohodlí z USA</h2>
+      <p><strong>Historie:</strong> Založena v roce 1906 v Bostonu. Od ortopedických vložek až po nejpohodlnější tenisky.</p>
+      <ul>
+        <li><strong>990</strong> – prémiová kvalita Made in USA</li>
+        <li><strong>574</strong> – univerzální retro</li>
+        <li><strong>327</strong> – moderní silueta s retro nádechem</li>
+      </ul>
+      <p><strong>Co chystají:</strong> Nové barvy modelů Fresh Foam, spolupráce s Aimé Leon Dore a JJJJound.</p>
+      <img src="https://images.unsplash.com/photo-1600185366997-4f2695c7ba26?auto=format&fit=crop&w=800&q=80" alt="New Balance boty">
     </div>
 
     <div class="card" id="udrzba">
