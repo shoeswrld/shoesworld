@@ -1,212 +1,243 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <title>Vše o botách</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vše o botách - horizontální fade scroll</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    overflow-x: hidden;
+  }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      scroll-behavior: smooth;
-    }
+  header {
+    background: #111;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 
-    header {
-      background-color: #111;
-      color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  nav {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 12px;
+    position: sticky;
+    top: 90px;
+    z-index: 1000;
+  }
 
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  nav a:hover {
+    background: #444;
+  }
+
+  main {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: calc(100vh - 150px);
+  }
+
+  section {
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
+    padding: 25px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 10px;
+    margin: 0 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  section.visible {
+    opacity: 1;
+  }
+
+  section img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    padding: 20px;
+  }
+
+  /* Scrollbar styling */
+  main::-webkit-scrollbar {
+    height: 10px;
+  }
+  main::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  main::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 5px;
+  }
+
+  @media (max-width:600px) {
     nav {
-      background-color: #222;
-      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 12px;
-      position: sticky;
-      top: 90px; /* header height + padding */
-      z-index: 999;
+      top: 70px;
     }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #444;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px 60px;
-    }
-
-    section {
-      background-color: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-      margin-bottom: 30px;
-      
-      /* Fade effect - start hidden */
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    section img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-top: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #999;
-      padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        top: 70px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Vše o botách</h1>
-    <p>Recenze, historie, tipy a info pro všechny milovníky tenisek</p>
-  </header>
+<header>
+  <h1>Vše o botách</h1>
+  <p>Recenze, historie, tipy a info pro všechny milovníky tenisek</p>
+</header>
 
-  <nav>
-    <a href="#nike">Nike</a>
-    <a href="#adidas">Adidas</a>
-    <a href="#puma">Puma</a>
-    <a href="#newbalance">New Balance</a>
-    <a href="#udrzba">Údržba</a>
-    <a href="#tipy">Výběr bot</a>
-  </nav>
+<nav>
+  <a href="#nike">Nike</a>
+  <a href="#adidas">Adidas</a>
+  <a href="#puma">Puma</a>
+  <a href="#newbalance">New Balance</a>
+  <a href="#udrzba">Údržba</a>
+  <a href="#tipy">Výběr bot</a>
+</nav>
 
-  <main>
-    <section id="nike">
-      <h2>Nike – legenda mezi značkami</h2>
-      <p><strong>Historie:</strong> Založena jako "Blue Ribbon Sports" v roce 1964, přejmenována na Nike v roce 1971 podle řecké bohyně vítězství.</p>
-      <ul>
-        <li><strong>Air Max</strong> – s viditelnou vzduchovou bublinou</li>
-        <li><strong>Air Force 1</strong> – streetwear klasika</li>
-        <li><strong>Dunk</strong> – basketbalový původ, dnes lifestyle</li>
-      </ul>
-      <p><strong>Co chystají:</strong> Nike připravuje nové barevné varianty Air Max 1 '86 a spolupráci s Travisem Scottem.</p>
-      <img src="https://images.unsplash.com/photo-1600180758890-e60d34796c4c?auto=format&fit=crop&w=800&q=80" alt="Nike boty" />
-    </section>
+<main id="container">
+  <section id="nike">
+    <h2>Nike – legenda mezi značkami</h2>
+    <p><strong>Historie:</strong> Založena jako "Blue Ribbon Sports" v roce 1964, přejmenována na Nike v roce 1971 podle řecké bohyně vítězství.</p>
+    <ul>
+      <li><strong>Air Max</strong> – s viditelnou vzduchovou bublinou</li>
+      <li><strong>Air Force 1</strong> – streetwear klasika</li>
+      <li><strong>Dunk</strong> – basketbalový původ, dnes lifestyle</li>
+    </ul>
+    <p><strong>Co chystají:</strong> Nike připravuje nové barevné varianty Air Max 1 '86 a spolupráci s Travisem Scottem.</p>
+    <img src="https://images.unsplash.com/photo-1600180758890-e60d34796c4c?auto=format&fit=crop&w=800&q=80" alt="Nike boty" />
+  </section>
 
-    <section id="adidas">
-      <h2>Adidas – tradice a inovace</h2>
-      <p><strong>Historie:</strong> Založen v roce 1949 Adi Dasslerem v Německu. Jedna z největších sportovních značek na světě.</p>
-      <ul>
-        <li><strong>Ultraboost</strong> – extrémní pohodlí</li>
-        <li><strong>Superstar</strong> – s gumovou špičkou</li>
-        <li><strong>Stan Smith</strong> – minimalistická elegance</li>
-      </ul>
-      <p><strong>Co chystají:</strong> Nové modely s recyklovanými materiály a spolupráce s Y-3 a Gucci.</p>
-      <img src="https://images.unsplash.com/photo-1585386959984-a4155224b4c2?auto=format&fit=crop&w=800&q=80" alt="Adidas boty" />
-    </section>
+  <section id="adidas">
+    <h2>Adidas – tradice a inovace</h2>
+    <p><strong>Historie:</strong> Založen v roce 1949 Adi Dasslerem v Německu. Jedna z největších sportovních značek na světě.</p>
+    <ul>
+      <li><strong>Ultraboost</strong> – extrémní pohodlí</li>
+      <li><strong>Superstar</strong> – s gumovou špičkou</li>
+      <li><strong>Stan Smith</strong> – minimalistická elegance</li>
+    </ul>
+    <p><strong>Co chystají:</strong> Nové modely s recyklovanými materiály a spolupráce s Y-3 a Gucci.</p>
+    <img src="https://images.unsplash.com/photo-1585386959984-a4155224b4c2?auto=format&fit=crop&w=800&q=80" alt="Adidas boty" />
+  </section>
 
-    <section id="puma">
-      <h2>Puma – sportovní síla</h2>
-      <p><strong>Historie:</strong> Oddělení od Adidasu v roce 1948. Značka známá pro sportovní výkonnost i módu.</p>
-      <ul>
-        <li><strong>Suede Classic</strong> – streetwear legenda</li>
-        <li><strong>RS-X</strong> – robustní a moderní</li>
-        <li><strong>Future Rider</strong> – retro vzhled</li>
-      </ul>
-      <p><strong>Co chystají:</strong> Kolaborace s BMW, nová řada RS-X Evolved.</p>
-      <img src="https://images.unsplash.com/photo-1610535533511-82a0b92e9f42?auto=format&fit=crop&w=800&q=80" alt="Puma boty" />
-    </section>
+  <section id="puma">
+    <h2>Puma – sportovní síla</h2>
+    <p><strong>Historie:</strong> Oddělení od Adidasu v roce 1948. Značka známá pro sportovní výkonnost i módu.</p>
+    <ul>
+      <li><strong>Suede Classic</strong> – streetwear legenda</li>
+      <li><strong>RS-X</strong> – robustní a moderní</li>
+      <li><strong>Future Rider</strong> – retro vzhled</li>
+    </ul>
+    <p><strong>Co chystají:</strong> Kolaborace s BMW, nová řada RS-X Evolved.</p>
+    <img src="https://images.unsplash.com/photo-1610535533511-82a0b92e9f42?auto=format&fit=crop&w=800&q=80" alt="Puma boty" />
+  </section>
 
-    <section id="newbalance">
-      <h2>New Balance – kvalita a pohodlí z USA</h2>
-      <p><strong>Historie:</strong> Založena v roce 1906 v Bostonu. Od ortopedických vložek až po nejpohodlnější tenisky.</p>
-      <ul>
-        <li><strong>990</strong> – prémiová kvalita Made in USA</li>
-        <li><strong>574</strong> – univerzální retro</li>
-        <li><strong>327</strong> – moderní silueta s retro nádechem</li>
-      </ul>
-      <p><strong>Co chystají:</strong> Nové barvy modelů Fresh Foam, spolupráce s Aimé Leon Dore a JJJJound.</p>
-      <img src="https://images.unsplash.com/photo-1600185366997-4f2695c7ba26?auto=format&fit=crop&w=800&q=80" alt="New Balance boty" />
-    </section>
+  <section id="newbalance">
+    <h2>New Balance – kvalita a pohodlí z USA</h2>
+    <p><strong>Historie:</strong> Založena v roce 1906 v Bostonu. Od ortopedických vložek až po nejpohodlnější tenisky.</p>
+    <ul>
+      <li><strong>990</strong> – prémiová kvalita Made in USA</li>
+      <li><strong>574</strong> – univerzální retro</li>
+      <li><strong>327</strong> – moderní silueta s retro nádechem</li>
+    </ul>
+    <p><strong>Co chystají:</strong> Nové barvy modelů Fresh Foam, spolupráce s Aimé Leon Dore a JJJJound.</p>
+    <img src="https://images.unsplash.com/photo-1600185366997-4f2695c7ba26?auto=format&fit=crop&w=800&q=80" alt="New Balance boty" />
+  </section>
 
-    <section id="udrzba">
-      <h2>Jak se starat o tenisky?</h2>
-      <ul>
-        <li>Čisti je měkkým kartáčem a teplou vodou</li>
-        <li>Používej impregnaci</li>
-        <li>Nedávej do pračky</li>
-        <li>Skladuj je v suchu s napínákem</li>
-      </ul>
-    </section>
+  <section id="udrzba">
+    <h2>Jak se starat o tenisky?</h2>
+    <ul>
+      <li>Čisti je měkkým kartáčem a teplou vodou</li>
+      <li>Používej impregnaci</li>
+      <li>Nedávej do pračky</li>
+      <li>Skladuj je v suchu s napínákem</li>
+    </ul>
+  </section>
 
-    <section id="tipy">
-      <h2>Jak vybrat správné boty?</h2>
-      <ul>
-        <li>Rozhodni se, jestli chceš styl nebo sport</li>
-        <li>Každá značka má jiný střih</li>
-        <li>Pohodlí je důležitější než vzhled</li>
-        <li>Vložky mohou výrazně pomoct</li>
-      </ul>
-    </section>
-  </main>
+  <section id="tipy">
+    <h2>Jak vybrat správné boty?</h2>
+    <ul>
+      <li>Rozhodni se, jestli chceš styl nebo sport</li>
+      <li>Každá značka má jiný střih</li>
+      <li>Pohodlí je důležitější než vzhled</li>
+      <li>Vložky mohou výrazně pomoct</li>
+    </ul>
+  </section>
+</main>
 
-  <footer>
-    © 2025 Vše o botách | Tento web je pouze informativní
-  </footer>
+<footer>
+  © 2025 Vše o botách
+</footer>
 
-  <script>
-    // Fade-in při scrollu pomocí Intersection Observer
-    const sections = document.querySelectorAll('section');
+<script>
+  const container = document.getElementById('container');
+  const sections = Array.from(container.querySelectorAll('section'));
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // efektní jednou
-        }
-      });
-    }, {
-      threshold: 0.15
+  function updateOpacity() {
+    const scrollLeft = container.scrollLeft;
+    const width = container.clientWidth;
+
+    sections.forEach((section, index) => {
+      const sectionLeft = index * width;
+      const distance = Math.abs(scrollLeft - sectionLeft);
+      // Vzdálenost 0 => opacity 1, vzdálenost >= width => opacity 0
+      let opacity = 1 - distance / width;
+      opacity = Math.max(0, Math.min(1, opacity));
+      section.style.opacity = opacity;
     });
+  }
 
-    sections.forEach(section => {
-      observer.observe(section);
+  // Inicializace
+  updateOpacity();
+
+  container.addEventListener('scroll', () => {
+    requestAnimationFrame(updateOpacity);
+  });
+
+  // Klikání v menu scrollne na danou sekci
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const id = link.getAttribute('href').substring(1);
+      const target = document.getElementById(id);
+      if (target) {
+        const index = sections.indexOf(target);
+        container.scrollTo({
+          left: index * container.clientWidth,
+          behavior: 'smooth'
+        });
+      }
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
