@@ -5,14 +5,12 @@
   <title>Vše o botách</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f7f7;
+      background-color: #f5f5f5;
       color: #333;
       line-height: 1.6;
     }
@@ -27,16 +25,18 @@
     nav {
       background-color: #222;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 10px;
+      gap: 15px;
+      padding: 12px;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 5px;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
@@ -51,15 +51,19 @@
 
     .card {
       background-color: #fff;
-      padding: 20px;
-      margin-bottom: 30px;
+      padding: 25px;
+      margin-bottom: 35px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
     .card h2 {
       margin-top: 0;
       color: #222;
+    }
+
+    .card ul {
+      padding-left: 20px;
     }
 
     footer {
@@ -72,7 +76,6 @@
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
-        align-items: center;
       }
     }
   </style>
@@ -81,38 +84,73 @@
 
   <header>
     <h1>Vše o botách</h1>
-    <p>Recenze, tipy a info pro všechny sneakerheads</p>
+    <p>Recenze, historie, tipy a info pro všechny milovníky tenisek</p>
   </header>
 
   <nav>
     <a href="#nike">Nike</a>
     <a href="#adidas">Adidas</a>
-    <a href="#tipy">Tipy</a>
+    <a href="#puma">Puma</a>
+    <a href="#udrzba">Údržba</a>
+    <a href="#tipy">Výběr bot</a>
   </nav>
 
   <main>
+
     <div class="card" id="nike">
-      <h2>Nike Air Max</h2>
-      <p>Ikonická řada bot s viditelným vzduchovým polštářkem. Air Max modely kombinují styl a pohodlí. Vhodné jak pro každodenní nošení, tak pro sběratele.</p>
+      <h2>Nike – legenda mezi značkami</h2>
+      <p>Společnost Nike vznikla v roce 1964 jako "Blue Ribbon Sports". Až v roce 1971 získala dnešní jméno podle řecké bohyně vítězství. Mezi nejznámější modely patří:</p>
+      <ul>
+        <li><strong>Air Max</strong> – ikonické s viditelnou vzduchovou bublinou</li>
+        <li><strong>Air Force 1</strong> – klasika ulice, velmi oblíbené mezi mladými</li>
+        <li><strong>Dunk</strong> – původně basketbalová bota, dnes lifestyle hit</li>
+      </ul>
     </div>
 
     <div class="card" id="adidas">
-      <h2>Adidas Ultraboost</h2>
-      <p>Extrémně pohodlné díky Boost pěně. Ideální na běh i do města. Mnoho limitovaných edic, často spolupráce se známými značkami a designéry.</p>
+      <h2>Adidas – tradice a inovace</h2>
+      <p>Německá značka založená v roce 1949 Adi Dasslerem. Adidas je známý jak sportovním, tak městským stylem. Mezi top modely patří:</p>
+      <ul>
+        <li><strong>Ultraboost</strong> – super pohodlné díky pěně Boost</li>
+        <li><strong>Superstar</strong> – bílá klasika s černými pruhy</li>
+        <li><strong>Stan Smith</strong> – minimalistické a stylové</li>
+      </ul>
+    </div>
+
+    <div class="card" id="puma">
+      <h2>Puma – sportovní síla s historií</h2>
+      <p>Vznikla jako rozdělení původní firmy Dasslerů (bratr Adi založil Adidas). Puma se zaměřuje na výkonnostní boty i spolupráce se známými osobnostmi (např. Rihanna).</p>
+      <ul>
+        <li><strong>Suede Classic</strong> – streetwear legenda</li>
+        <li><strong>RS-X</strong> – moderní, robustní a barevné</li>
+        <li><strong>Future Rider</strong> – retro styl s pohodlím</li>
+      </ul>
+    </div>
+
+    <div class="card" id="udrzba">
+      <h2>Jak se starat o tenisky?</h2>
+      <ul>
+        <li>Čisti je pravidelně měkkým kartáčem a teplou vodou</li>
+        <li>Používej impregnaci – hlavně u semiše</li>
+        <li>Nedávej je do pračky – může poškodit strukturu</li>
+        <li>Skladuj je na suchém místě, nejlépe s napínákem</li>
+      </ul>
     </div>
 
     <div class="card" id="tipy">
-      <h2>Jak si vybrat tenisky?</h2>
+      <h2>Jak vybrat ty správné boty?</h2>
       <ul>
-        <li>Zamysli se, na co je budeš používat – styl nebo sport?</li>
-        <li>Důležitá je velikost – různé značky mají různé střihy</li>
-        <li>Pozor na padělky – ověřuj si prodejce</li>
+        <li>Rozhodni se: budeš je nosit každý den, nebo jen občas?</li>
+        <li>Značky se liší střihem – vždy zkoušej</li>
+        <li>Neřiď se jen vzhledem – pohodlí je důležité</li>
+        <li>Vyplatí se investovat do kvalitní vložky</li>
       </ul>
     </div>
+
   </main>
 
   <footer>
-    © 2025 Vše o botách | Tento web je nezávislý a pouze informativní
+    © 2025 Vše o botách | Tento web je pouze informativní, bez reklam
   </footer>
 
 </body>
