@@ -3,47 +3,73 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vše o botách - horizontální fade scroll</title>
+<title>Vše o botách – Detailní přehled</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
   body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f5f5;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
     overflow-x: hidden;
+    color: #333;
   }
 
   header {
-    background: #111;
-    color: #fff;
+    background: #1f2937;
+    color: #f8fafc;
     padding: 30px 20px;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+  }
+  header p {
+    margin: 8px 0 0 0;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #cbd5e1;
   }
 
   nav {
-    background: #222;
+    background: #334155;
     display: flex;
     justify-content: center;
-    gap: 15px;
-    padding: 12px;
+    gap: 20px;
+    padding: 14px 10px;
     position: sticky;
     top: 90px;
     z-index: 1000;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 0.1);
+    flex-wrap: wrap;
   }
 
   nav a {
-    color: #fff;
+    color: #e2e8f0;
     text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 5px;
+    padding: 10px 18px;
+    border-radius: 30px;
     cursor: pointer;
-    white-space: nowrap;
+    font-weight: 600;
+    font-size: 1rem;
+    background: #475569;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
   }
-
-  nav a:hover {
-    background: #444;
+  nav a:hover, nav a:focus {
+    background: #f97316;
+    color: white;
+    outline: none;
+    box-shadow: 0 4px 10px #fb923c;
   }
 
   main {
@@ -51,58 +77,124 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     height: calc(100vh - 150px);
+    padding: 20px 0;
   }
 
   section {
     flex: 0 0 100vw;
     scroll-snap-align: start;
-    padding: 25px;
-    box-sizing: border-box;
     background: white;
-    border-radius: 10px;
-    margin: 0 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+    margin: 0 16px;
+    padding: 30px 40px 40px 40px;
+    box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #f97316 #f0f4f8;
   }
 
   section.visible {
     opacity: 1;
   }
 
-  section img {
-    max-width: 100%;
-    border-radius: 8px;
+  section::-webkit-scrollbar {
+    width: 8px;
+  }
+  section::-webkit-scrollbar-thumb {
+    background-color: #f97316;
+    border-radius: 10px;
+  }
+  section::-webkit-scrollbar-track {
+    background-color: #f0f4f8;
+  }
+
+  section h2 {
+    margin-top: 0;
+    font-size: 2.4rem;
+    color: #f97316;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  section p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #475569;
+  }
+
+  ul {
     margin-top: 15px;
+    padding-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #334155;
+    position: relative;
+  }
+  ul li::before {
+    content: '✓';
+    color: #f97316;
+    font-weight: bold;
+    position: absolute;
+    left: -20px;
+    top: 2px;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 14px;
+    margin-top: 25px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.12);
+    object-fit: cover;
   }
 
   footer {
     text-align: center;
     font-size: 14px;
-    color: #999;
-    padding: 20px;
+    color: #94a3b8;
+    padding: 25px 0;
+    background: #f0f4f8;
+    user-select: none;
   }
 
-  /* Scrollbar styling */
-  main::-webkit-scrollbar {
-    height: 10px;
-  }
-  main::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-  }
-  main::-webkit-scrollbar-track {
-    background: #eee;
-    border-radius: 5px;
-  }
-
-  @media (max-width:600px) {
+  /* Responsive */
+  @media (max-width: 900px) {
+    section {
+      padding: 25px 20px 35px 20px;
+      margin: 0 10px;
+    }
+    section h2 {
+      font-size: 2rem;
+    }
     nav {
-      flex-wrap: wrap;
-      top: 70px;
+      gap: 12px;
+      padding: 12px 10px;
+    }
+    nav a {
+      font-size: 0.95rem;
+      padding: 8px 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    section {
+      padding: 20px 16px 30px 16px;
+      margin: 0 8px;
+    }
+    section h2 {
+      font-size: 1.7rem;
+    }
+    nav a {
+      font-size: 0.9rem;
+      padding: 7px 12px;
     }
   }
 </style>
@@ -111,7 +203,7 @@
 
 <header>
   <h1>Vše o botách</h1>
-  <p>Recenze, historie, tipy a info pro všechny milovníky tenisek</p>
+  <p>Nejdetailnější informace o nejlepších značkách a péči o tenisky</p>
 </header>
 
 <nav>
@@ -126,75 +218,81 @@
 <main id="container">
   <section id="nike">
     <h2>Nike – legenda mezi značkami</h2>
-    <p><strong>Historie:</strong> Založena jako "Blue Ribbon Sports" v roce 1964, přejmenována na Nike v roce 1971 podle řecké bohyně vítězství.</p>
+    <p><strong>Historie:</strong> Nike vznikla v roce 1964 jako Blue Ribbon Sports a v roce 1971 přejmenována na počest bohyně vítězství Nike. Díky inovacím, jako je technologie Air, se stala jednou z nejvýznamnějších značek na světě.</p>
     <ul>
-      <li><strong>Air Max</strong> – s viditelnou vzduchovou bublinou</li>
-      <li><strong>Air Force 1</strong> – streetwear klasika</li>
-      <li><strong>Dunk</strong> – basketbalový původ, dnes lifestyle</li>
+      <li><strong>Air Max:</strong> Revoluční design s viditelnou vzduchovou bublinou, představen v roce 1987.</li>
+      <li><strong>Air Force 1:</strong> Kultovní basketbalová silueta, která se stala ikonou streetwearu od roku 1982.</li>
+      <li><strong>Dunk:</strong> Původně basketbalová bota, dnes velmi populární v módě i skate komunitě.</li>
     </ul>
-    <p><strong>Co chystají:</strong> Nike připravuje nové barevné varianty Air Max 1 '86 a spolupráci s Travisem Scottem.</p>
+    <p><strong>Budoucí plány:</strong> Nové edice Air Max 1 '86 s novými barevnými kombinacemi a limitované spolupráce s umělci a designéry jako Travis Scott.</p>
     <img src="https://images.unsplash.com/photo-1600180758890-e60d34796c4c?auto=format&fit=crop&w=800&q=80" alt="Nike boty" />
   </section>
 
   <section id="adidas">
     <h2>Adidas – tradice a inovace</h2>
-    <p><strong>Historie:</strong> Založen v roce 1949 Adi Dasslerem v Německu. Jedna z největších sportovních značek na světě.</p>
+    <p><strong>Historie:</strong> Založena v roce 1949 Adi Dasslerem, značka která kombinovala sportovní výkon a styl. Proslavila se nejen díky legendárním třem pruhům, ale i technologii Boost.</p>
     <ul>
-      <li><strong>Ultraboost</strong> – extrémní pohodlí</li>
-      <li><strong>Superstar</strong> – s gumovou špičkou</li>
-      <li><strong>Stan Smith</strong> – minimalistická elegance</li>
+      <li><strong>Ultraboost:</strong> Revoluční podešev s energii vracející pěnou pro maximální pohodlí.</li>
+      <li><strong>Superstar:</strong> Klasické tenisky s gumovou špičkou, oblíbené od 70. let.</li>
+      <li><strong>Stan Smith:</strong> Jednoduchý, čistý design, který se stal symbolem elegance v teniskách.</li>
     </ul>
-    <p><strong>Co chystají:</strong> Nové modely s recyklovanými materiály a spolupráce s Y-3 a Gucci.</p>
+    <p><strong>Budoucnost:</strong> Adidas se soustředí na udržitelnost, recyklované materiály a exkluzivní kolekce s návrháři jako Yohji Yamamoto (Y-3) či Gucci.</p>
     <img src="https://images.unsplash.com/photo-1585386959984-a4155224b4c2?auto=format&fit=crop&w=800&q=80" alt="Adidas boty" />
   </section>
 
   <section id="puma">
-    <h2>Puma – sportovní síla</h2>
-    <p><strong>Historie:</strong> Oddělení od Adidasu v roce 1948. Značka známá pro sportovní výkonnost i módu.</p>
+    <h2>Puma – sportovní síla a styl</h2>
+    <p><strong>Historie:</strong> Založena v roce 1948 jako odštěpená značka od Adidasu. Puma je známá kombinací výkonu a módy, zejména díky spolupracím s celebritami.</p>
     <ul>
-      <li><strong>Suede Classic</strong> – streetwear legenda</li>
-      <li><strong>RS-X</strong> – robustní a moderní</li>
-      <li><strong>Future Rider</strong> – retro vzhled</li>
+      <li><strong>Suede Classic:</strong> Kultovní streetwear bota z 60. let, která stále kraluje ulicím.</li>
+      <li><strong>RS-X:</strong> Moderní robustní silueta s výraznými barvami a technologiemi.</li>
+      <li><strong>Future Rider:</strong> Retro design s pohodlnou konstrukcí, populární u mladých lidí.</li>
     </ul>
-    <p><strong>Co chystají:</strong> Kolaborace s BMW, nová řada RS-X Evolved.</p>
+    <p><strong>Novinky:</strong> Spolupráce s BMW, limitované série a nová evoluce RS-X modelů.</p>
     <img src="https://images.unsplash.com/photo-1610535533511-82a0b92e9f42?auto=format&fit=crop&w=800&q=80" alt="Puma boty" />
   </section>
 
   <section id="newbalance">
-    <h2>New Balance – kvalita a pohodlí z USA</h2>
-    <p><strong>Historie:</strong> Založena v roce 1906 v Bostonu. Od ortopedických vložek až po nejpohodlnější tenisky.</p>
+    <h2>New Balance – kvalita a pohodlí</h2>
+    <p><strong>Historie:</strong> Založena v roce 1906, původně vyráběla ortopedické vložky. Dnes je známá pro komfortní tenisky vyráběné převážně v USA a Velké Británii.</p>
     <ul>
-      <li><strong>990</strong> – prémiová kvalita Made in USA</li>
-      <li><strong>574</strong> – univerzální retro</li>
-      <li><strong>327</strong> – moderní silueta s retro nádechem</li>
+      <li><strong>990:</strong> Prémiová série vyrobená v USA, která nabízí špičkový komfort a kvalitu.</li>
+      <li><strong>574:</strong> Retro styl s pohodlnou stélkou, populární ve streetwear scéně.</li>
+      <li><strong>327:</strong> Novější model inspirovaný běžeckou klasikou, velmi trendy.</li>
     </ul>
-    <p><strong>Co chystají:</strong> Nové barvy modelů Fresh Foam, spolupráce s Aimé Leon Dore a JJJJound.</p>
+    <p><strong>Plány:</strong> Nové Fresh Foam modely a kolaborace s Aimé Leon Dore a JJJJound, které zvyšují prestiž značky.</p>
     <img src="https://images.unsplash.com/photo-1600185366997-4f2695c7ba26?auto=format&fit=crop&w=800&q=80" alt="New Balance boty" />
   </section>
 
   <section id="udrzba">
-    <h2>Jak se starat o tenisky?</h2>
+    <h2>Jak správně pečovat o tenisky</h2>
+    <p>Péče o boty prodlužuje jejich životnost a udržuje je stále jako nové.</p>
     <ul>
-      <li>Čisti je měkkým kartáčem a teplou vodou</li>
-      <li>Používej impregnaci</li>
-      <li>Nedávej do pračky</li>
-      <li>Skladuj je v suchu s napínákem</li>
+      <li>Čistěte jemným kartáčem nebo houbou s teplou vodou a jemným mýdlem.</li>
+      <li>Vyvarujte se praní v pračce, které může poškodit lepidlo a materiály.</li>
+      <li>Používejte impregnaci pro ochranu proti vodě a nečistotám.</li>
+      <li>Boty skladujte na suchém místě, ideálně s napínáky, které udrží tvar.</li>
+      <li>Vyhněte se přímému slunečnímu záření, které může způsobit vyblednutí barev.</li>
     </ul>
+    <img src="https://images.unsplash.com/photo-1585418963769-47f4b7cc90ca?auto=format&fit=crop&w=800&q=80" alt="Péče o boty" />
   </section>
 
   <section id="tipy">
-    <h2>Jak vybrat správné boty?</h2>
+    <h2>Tipy pro výběr ideálních bot</h2>
+    <p>Správný výběr bot je klíčový pro komfort i styl.</p>
     <ul>
-      <li>Rozhodni se, jestli chceš styl nebo sport</li>
-      <li>Každá značka má jiný střih</li>
-      <li>Pohodlí je důležitější než vzhled</li>
-      <li>Vložky mohou výrazně pomoct</li>
+      <li>Určete, zda chcete boty na sport nebo spíše na běžné nošení.</li>
+      <li>Znáte svůj typ nohy – plochá, vysoký nárt? To ovlivňuje výběr.</li>
+      <li>Zkoušejte boty vždy v odpoledních hodinách, kdy nohy nejsou oteklé.</li>
+      <li>Vyberte si boty, které vám padnou na délku i šířku.</li>
+      <li>Investujte do kvalitních vložek, pokud máte specifické potřeby.</li>
     </ul>
+    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Výběr bot" />
   </section>
 </main>
 
 <footer>
-  © 2025 Vše o botách
+  © 2025 Vše o botách – Váš průvodce světem tenisek
 </footer>
 
 <script>
@@ -208,21 +306,18 @@
     sections.forEach((section, index) => {
       const sectionLeft = index * width;
       const distance = Math.abs(scrollLeft - sectionLeft);
-      // Vzdálenost 0 => opacity 1, vzdálenost >= width => opacity 0
       let opacity = 1 - distance / width;
       opacity = Math.max(0, Math.min(1, opacity));
       section.style.opacity = opacity;
     });
   }
 
-  // Inicializace
   updateOpacity();
 
   container.addEventListener('scroll', () => {
     requestAnimationFrame(updateOpacity);
   });
 
-  // Klikání v menu scrollne na danou sekci
   document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
