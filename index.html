@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Svět bot – interaktivní průvodce</title>
+<title>Svět bot – záložky</title>
 <style>
-  body {margin:0;font-family:system-ui,Arial,sans-serif;background:#f7f7f7;line-height:1.6;}
+  body {margin:0;font-family:system-ui,Arial,sans-serif;background:#f7f7f7;}
   .wrap {max-width:900px;margin:auto;padding:20px;}
-  header, section {background:#fff;padding:20px;border-radius:10px;margin-bottom:15px;box-shadow:0 0 10px rgba(0,0,0,0.05);}
   nav {display:flex;justify-content:space-around;margin-bottom:20px;flex-wrap:wrap;}
   nav button {padding:10px 18px;border:none;border-radius:6px;background:#222;color:#fff;font-weight:600;cursor:pointer;transition:0.3s;}
   nav button:hover, nav button.active {background:#c0392b;}
+  section {background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.05);display:none;}
+  section.active {display:block;}
   h1,h2 {margin-top:0;}
   img {width:100%;border-radius:10px;margin:12px 0;}
   .release-list {list-style:none;padding:0;}
   .release-list li {padding:8px 0;border-bottom:1px solid #eee;}
-  footer{text-align:center;font-size:0.85rem;color:#666;margin-top:20px;}
   .tip {background:#fffbe6;padding:10px;border-radius:6px;border:1px solid #fff3c4;margin:12px 0;font-size:0.95rem;color:#8a6d00;}
-  section {display:none;} /* všechny sekce skryty kromě úvodu */
+  footer{text-align:center;font-size:0.85rem;color:#666;margin-top:20px;}
 </style>
 </head>
 <body>
@@ -29,7 +29,7 @@
   <p>Interaktivní průvodce historií, typy a nadcházejícími modely bot</p>
 </header>
 
-<!-- Interaktivní bloky nahoře -->
+<!-- Menu záložek -->
 <nav>
   <button class="tab-btn active" data-target="uvod">Úvod</button>
   <button class="tab-btn" data-target="historie">Historie</button>
@@ -38,13 +38,12 @@
   <button class="tab-btn" data-target="vyber">Jak vybrat</button>
 </nav>
 
-<!-- ÚVOD -->
-<section id="uvod" style="display:block;">
+<!-- Sekce -->
+<section id="uvod" class="active">
   <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Boty">
   <p>Vítejte na průvodci světem bot. Tento web je určen pro všechny nadšence obuvi – od sběratelů sneakers až po lidi, kteří hledají pohodlné boty pro každodenní nošení.</p>
 </section>
 
-<!-- HISTORIE -->
 <section id="historie">
   <h2>Historie bot</h2>
   <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1100&q=60" alt="Historie obuvi">
@@ -52,7 +51,6 @@
   <div class="tip">Tip: Nike Air Jordan se staly ikonou nejen sportu, ale i popkultury.</div>
 </section>
 
-<!-- TYPY BOT -->
 <section id="typy">
   <h2>Druhy bot</h2>
   <img src="https://images.unsplash.com/photo-1528701800489-20be9c5e6c52?auto=format&fit=crop&w=1100&q=60" alt="Různé typy bot">
@@ -63,7 +61,6 @@
   <p><strong>Módní:</strong> elegantní, pro formální příležitosti.</p>
 </section>
 
-<!-- RELEASES -->
 <section id="releases">
   <h2>Nadcházející vydání</h2>
   <img src="https://images.unsplash.com/photo-1617664564360-3bd299c24e75?auto=format&fit=crop&w=1100&q=60" alt="Nové modely bot">
@@ -77,7 +74,6 @@
   </ul>
 </section>
 
-<!-- JAK VYBRAT -->
 <section id="vyber">
   <h2>Jak vybrat správné boty</h2>
   <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1100&q=60" alt="Výběr bot">
@@ -98,16 +94,11 @@ const sections = document.querySelectorAll('section');
 
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Odstranit active z ostatních
     buttons.forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-
-    // Skrýt všechny sekce
-    sections.forEach(sec=>sec.style.display='none');
-    // Zobrazit cílovou sekci
+    sections.forEach(sec=>sec.classList.remove('active'));
     const target = btn.getAttribute('data-target');
-    document.getElementById(target).style.display = 'block';
-    window.scrollTo({top:0, behavior:'smooth'});
+    document.getElementById(target).classList.add('active');
   });
 });
 </script>
