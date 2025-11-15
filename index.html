@@ -3,11 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Svět bot – Dark Mode</title>
+<title>Svět bot – Dark Mode s Ads</title>
 <style>
   body {margin:0;font-family:system-ui,Arial,sans-serif;background:#121212;color:#f0f0f0;}
-  .wrap {max-width:900px;margin:auto;padding:20px;}
+  .container {display:flex;max-width:1200px;margin:auto;}
+  .sidebar {width:15%;padding:10px;}
+  .main-content {width:70%;padding:10px;}
   
+  @media (max-width:900px){
+    .container {flex-direction:column;}
+    .sidebar, .main-content {width:100%;}
+  }
+
   /* Menu záložek */
   nav {display:flex;justify-content:space-around;margin-bottom:20px;flex-wrap:wrap;}
   nav button {
@@ -44,71 +51,98 @@
 </head>
 <body>
 
-<div class="wrap">
+<div class="container">
+  <!-- Levý sidebar -->
+  <div class="sidebar">
+    <!-- Google AdSense blok levý -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="YYYYYYYYYY"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
 
-<header>
-  <h1>Svět bot</h1>
-  <p>Interaktivní průvodce historií, typy a nadcházejícími modely bot</p>
-</header>
+  <!-- Hlavní obsah -->
+  <div class="main-content">
 
-<!-- Menu záložek -->
-<nav>
-  <button class="tab-btn active" data-target="uvod">Úvod</button>
-  <button class="tab-btn" data-target="historie">Historie</button>
-  <button class="tab-btn" data-target="typy">Druhy bot</button>
-  <button class="tab-btn" data-target="releases">Nové modely</button>
-  <button class="tab-btn" data-target="vyber">Jak vybrat</button>
-</nav>
+    <header>
+      <h1>Svět bot</h1>
+      <p>Interaktivní průvodce historií, typy a nadcházejícími modely bot</p>
+    </header>
 
-<!-- Sekce -->
-<section id="uvod" class="active">
-  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Boty">
-  <p>Vítejte na průvodci světem bot. Tento web je určen pro všechny nadšence obuvi – od sběratelů sneakers až po lidi, kteří hledají pohodlné boty pro každodenní nošení.</p>
-</section>
+    <!-- Menu záložek -->
+    <nav>
+      <button class="tab-btn active" data-target="uvod">Úvod</button>
+      <button class="tab-btn" data-target="historie">Historie</button>
+      <button class="tab-btn" data-target="typy">Druhy bot</button>
+      <button class="tab-btn" data-target="releases">Nové modely</button>
+      <button class="tab-btn" data-target="vyber">Jak vybrat</button>
+    </nav>
 
-<section id="historie">
-  <h2>Historie bot</h2>
-  <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1100&q=60" alt="Historie obuvi">
-  <p>Boty se vyvíjely spolu s lidskou civilizací. Nejstarší boty byly sandály z kůže či rostlinných vláken. Industrializace umožnila masovou výrobu obuvi a vznik ikonických značek.</p>
-  <div class="tip">Tip: Nike Air Jordan se staly ikonou nejen sportu, ale i popkultury.</div>
-</section>
+    <!-- Sekce -->
+    <section id="uvod" class="active">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Boty">
+      <p>Vítejte na průvodci světem bot. Tento web je určen pro všechny nadšence obuvi – od sběratelů sneakers až po lidi, kteří hledají pohodlné boty pro každodenní nošení.</p>
+    </section>
 
-<section id="typy">
-  <h2>Druhy bot</h2>
-  <img src="https://images.unsplash.com/photo-1600185365481-9d8a0db6f7ed?auto=format&fit=crop&w=1100&q=60" alt="Různé typy bot">
-  <p><strong>Tenisky:</strong> pohodlné, volnočasové.</p>
-  <p><strong>Běžecké:</strong> ergonomické s tlumením.</p>
-  <p><strong>Outdoor:</strong> odolné do terénu.</p>
-  <p><strong>Pracovní:</strong> bezpečnostní prvky.</p>
-  <p><strong>Módní:</strong> elegantní, pro formální příležitosti.</p>
-</section>
+    <section id="historie">
+      <h2>Historie bot</h2>
+      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1100&q=60" alt="Historie obuvi">
+      <p>Boty se vyvíjely spolu s lidskou civilizací. Nejstarší boty byly sandály z kůže či rostlinných vláken. Industrializace umožnila masovou výrobu obuvi a vznik ikonických značek.</p>
+      <div class="tip">Tip: Nike Air Jordan se staly ikonou nejen sportu, ale i popkultury.</div>
+    </section>
 
-<section id="releases">
-  <h2>Nadcházející vydání</h2>
-  <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=1100&q=60" alt="Nové modely bot">
-  <div class="tip">Místo pro AdSense reklamní blok</div>
-  <ul class="release-list">
-    <li><strong>Nike Air Example</strong> – Q2 2026</li>
-    <li><strong>Adidas Runner X</strong> – Q3 2026</li>
-    <li><strong>Classic Canvas Reissue</strong> – brzy</li>
-    <li><strong>New Balance Retro</strong> – Q4 2026</li>
-    <li><strong>Puma Velocity</strong> – brzy</li>
-  </ul>
-</section>
+    <section id="typy">
+      <h2>Druhy bot</h2>
+      <img src="https://images.unsplash.com/photo-1600185365481-9d8a0db6f7ed?auto=format&fit=crop&w=1100&q=60" alt="Různé typy bot">
+      <p><strong>Tenisky:</strong> pohodlné, volnočasové.</p>
+      <p><strong>Běžecké:</strong> ergonomické s tlumením.</p>
+      <p><strong>Outdoor:</strong> odolné do terénu.</p>
+      <p><strong>Pracovní:</strong> bezpečnostní prvky.</p>
+      <p><strong>Módní:</strong> elegantní, pro formální příležitosti.</p>
+    </section>
 
-<section id="vyber">
-  <h2>Jak vybrat správné boty</h2>
-  <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1100&q=60" alt="Výběr bot">
-  <p>✔ Vyber správnou velikost.</p>
-  <p>✔ Zvaž účel.</p>
-  <p>✔ Materiál ovlivňuje prodyšnost a odolnost.</p>
-  <p>✔ Podrážka musí odpovídat aktivitě.</p>
-  <div class="tip">Tip: Sledujte oficiální release značek pro limitované sneakers.</div>
-</section>
+    <section id="releases">
+      <h2>Nadcházející vydání</h2>
+      <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=1100&q=60" alt="Nové modely bot">
+      <div class="tip">Místo pro AdSense reklamní blok</div>
+      <ul class="release-list">
+        <li><strong>Nike Air Example</strong> – Q2 2026</li>
+        <li><strong>Adidas Runner X</strong> – Q3 2026</li>
+        <li><strong>Classic Canvas Reissue</strong> – brzy</li>
+        <li><strong>New Balance Retro</strong> – Q4 2026</li>
+        <li><strong>Puma Velocity</strong> – brzy</li>
+      </ul>
+    </section>
 
-<footer>
-  © 2025 Svět bot – Dark Mode průvodce • GitHub Pages ready • AdSense ready
-</footer>
+    <section id="vyber">
+      <h2>Jak vybrat správné boty</h2>
+      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1100&q=60" alt="Výběr bot">
+      <p>✔ Vyber správnou velikost.</p>
+      <p>✔ Zvaž účel.</p>
+      <p>✔ Materiál ovlivňuje prodyšnost a odolnost.</p>
+      <p>✔ Podrážka musí odpovídat aktivitě.</p>
+      <div class="tip">Tip: Sledujte oficiální release značek pro limitované sneakers.</div>
+    </section>
+
+    <footer>
+      © 2025 Svět bot – Dark Mode průvodce • GitHub Pages ready • AdSense ready
+    </footer>
+
+  </div>
+
+  <!-- Pravý sidebar -->
+  <div class="sidebar">
+    <!-- Google AdSense blok pravý -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="ZZZZZZZZZZ"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+</div>
 
 <script>
 const buttons = document.querySelectorAll('.tab-btn');
