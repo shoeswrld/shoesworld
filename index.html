@@ -1,251 +1,116 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vše o botách</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Svět bot — historie, typy a nové release</title>
+
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #f5f5f5;
-      color: #333;
-      overflow-x: hidden;
+    :root{--max:900px;--accent:#222}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto;
+      background:#fafafa;
+      padding:20px;
+      display:flex;
+      justify-content:center;
     }
-    nav {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px 0;
-    }
-    nav a {
-      text-decoration: none;
-      color: #444;
-      background: #e0e0e0;
-      padding: 8px 16px;
-      border-radius: 20px;
-      transition: background 0.3s;
-      font-weight: bold;
-    }
-    nav a:hover {
-      background: #f97316;
-      color: #fff;
-    }
-    main {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      height: 100vh;
-    }
-    section {
-      flex: 0 0 100vw;
-      scroll-snap-align: start;
-      background: #fff;
-      margin: 5px;
-      padding: 40px;
-      box-sizing: border-box;
-      border-radius: 16px;
-      opacity: 0.3;
-      transition: opacity 0.4s ease;
-      overflow-y: auto;
-    }
-    section.visible {
-      opacity: 1;
-    }
-    h2 {
-      font-size: 2rem;
-      color: #f97316;
-      margin-bottom: 20px;
-    }
-    h3 {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      color: #444;
-    }
-    p, li {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
-    }
-    ul {
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 0.9rem;
-    }
+    .wrap{max-width:var(--max);width:100%}
+    header img{width:100%;border-radius:10px;margin-bottom:15px}
+    section{background:#fff;padding:18px;border-radius:10px;margin-bottom:14px;box-shadow:0 0 0 1px rgba(0,0,0,0.05)}
+    h2{margin:0 0 10px 0}
+    .img{width:100%;border-radius:10px;margin:12px 0}
+    .release-list{list-style:none;padding:0;margin:8px 0}
+    .release-list li{padding:8px 0;border-bottom:1px solid #eee}
+    nav a{margin-right:10px;color:#222;text-decoration:none;font-size:0.95rem}
+    nav a:hover{text-decoration:underline}
+    footer{text-align:center;font-size:0.85rem;color:#666;margin-top:20px}
   </style>
 </head>
+
 <body>
+<div class="wrap">
+
+  <!-- TOP obrázek -->
+  <header>
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Boty">
+    <h1>Svět bot</h1>
+    <p>Historie, druhy obuvi a přehled nových modelů.</p>
+  </header>
 
   <nav>
     <a href="#uvod">Úvod</a>
-    <a href="#nike">Nike</a>
-    <a href="#adidas">Adidas</a>
-    <a href="#puma">Puma</a>
-    <a href="#newbalance">New Balance</a>
-    <a href="#udrzba">Údržba</a>
-    <a href="#vyber">Výběr</a>
+    <a href="#historie">Historie</a>
+    <a href="#typy">Druhy</a>
+    <a href="#releases">Nové vydání</a>
+    <a href="#vyber">Jak vybrat</a>
   </nav>
 
-  <main>
-    <section id="uvod" class="visible">
-      <h2>Vše o botách</h2>
-      <p>Objev historii, inovace, technologie i módu světa obuvi. Od prvních sandálů přes sportovní revoluce až po dnešní high‑tech tenisky. Tento průvodce ti dá komplexní přehled:</p>
-      <ul>
-        <li><strong>Historie obuvi:</strong> Od starověkých civilizací k moderním značkám</li>
-        <li><strong>Technologie:</strong> Air, Boost, Flyknit, Fresh Foam a další</li>
-        <li><strong>Ikonické modely:</strong> Cortez, Stan Smith, Suede, 990 a další</li>
-        <li><strong>Údržba:</strong> Jak pečovat o různé materiály</li>
-        <li><strong>Výběr:</strong> Boty pro běh, basket, turistiku i casual</li>
-      </ul>
-    </section>
+  <!-- ÚVOD -->
+  <section id="uvod">
+    <h2>Úvod</h2>
+    <img class="img" src="https://images.unsplash.com/photo-1595950653175-1b6b65c1a562?auto=format&fit=crop&w=1100&q=60" alt="Tenisky">
+    <p>
+      Boty nejsou jen praktický doplněk – jsou módou, kulturou a často i sběratelským kouskem.
+      Na této stránce najdeš stručnou historii bot, typy obuvi i přehled plánovaných vydání známých modelů.
+    </p>
+  </section>
 
-    <section id="nike">
-      <h2>Nike</h2>
-      <h3>Historie a milníky</h3>
-      <p><strong>1964:</strong> Založení jako Blue Ribbon Sports. <strong>1971:</strong> Přejmenování na Nike a debut loga „Swoosh“. <strong>1979:</strong> První Air polštářky v modelu Tailwind. <strong>1987:</strong> Air Max 1 s viditelnou vzduchovou bublinou.</p>
-      <h3>Technologie</h3>
-      <ul>
-        <li><strong>Air:</strong> Původně pro tlumení v běžeckých botách, dnes ikona.</li>
-        <li><strong>Flyknit:</strong> Ultralehký svršek ručně tkaný z jedné nitě.</li>
-        <li><strong>React:</strong> Pěna s měkkým došlapem a vysokou návratností.</li>
-        <li><strong>ZoomX:</strong> Nejlehčí a nejvíce energii navracející pěna pro závody.</li>
-      </ul>
-      <h3>Ikonické modely</h3>
-      <ul>
-        <li>Air Max 1, 90, 95, 97</li>
-        <li>Air Force 1 Low/High</li>
-        <li>Nike Cortez, Dunk, Blazer</li>
-      </ul>
-      <h3>Novinky 2025</h3>
-      <p>Air Zoom Alphafly Next% 3 pro maratonce, Air Max Pulse v retro barvách, limitované edice Off‑White x Nike Dunk.</p>
-    </section>
+  <!-- HISTORIE -->
+  <section id="historie">
+    <h2>Stručná historie bot</h2>
+    <img class="img" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1100&q=60" alt="Historie obuvi">
+    <p>
+      První boty vznikaly už ve starověku. Jednoduché sandály a kožené návleky chránily chodidla
+      před terénem. S rozvojem průmyslu se boty staly dostupnější a mnohem rozmanitější.
+    </p>
+  </section>
 
-    <section id="adidas">
-      <h2>Adidas</h2>
-      <h3>Historie a milníky</h3>
-      <p><strong>1924:</strong> Zakladatel Adolf Dassler začíná vyrábět boty v Garbrechtshofenu. <strong>1949:</strong> Oficiální založení značky. <strong>1970:</strong> Debut Superstar na basketbalu. <strong>2015:</strong> Představení Boost technologie.</p>
-      <h3>Technologie</h3>
-      <ul>
-        <li><strong>Boost:</strong> Tisíce kapslí pěny vracející energii.</li>
-        <li><strong>Primeknit:</strong> Bezešvý úplet perfektně obepínající nohu.</li>
-        <li><strong>Continental:</strong> Guma pro extrémní trakci v každém počasí.</li>
-      </ul>
-      <h3>Ikonické modely</h3>
-      <ul>
-        <li>Superstar, Stan Smith, Campus</li>
-        <li>Ultraboost, NMD, Yeezy Boost</li>
-      </ul>
-      <h3>Novinky 2025</h3>
-      <p>Futurecraft 4D II s pokročilou 3D tisknutou podrážkou, kolaborace s Gucci a Prada v limitovaných edicích.</p>
-    </section>
+  <!-- TYPY BOT -->
+  <section id="typy">
+    <h2>Hlavní druhy bot</h2>
+    <img class="img" src="https://images.unsplash.com/photo-1528701800489-20be9c5e6c52?auto=format&fit=crop&w=1100&q=60" alt="Různé typy bot">
+    <p><strong>Tenisky:</strong> volnočasové a pohodlné.</p>
+    <p><strong>Běžecké boty:</strong> lehké, s tlumením a podporou klenby.</p>
+    <p><strong>Outdoor:</strong> pevné, odolné, vhodné do terénu.</p>
+    <p><strong>Pracovní obuv:</strong> ochranné prvky jako ocelová špička.</p>
+  </section>
 
-    <section id="puma">
-      <h2>Puma</h2>
-      <h3>Historie a milníky</h3>
-      <p><strong>1948:</strong> Rudolf Dassler zakládá Puma po rozdělení rodinné firmy. <strong>1968:</strong> Kultovní Suede přijímá hip‑hopová scéna. <strong>2010:</strong> Relaunch RS‑series s retro‑futuristickým designem.</p>
-      <h3>Technologie</h3>
-      <ul>
-        <li><strong>Nitro:</strong> Nová pěna pro rychlost a tlumení.</li>
-        <li><strong>ProFoam:</strong> Lehké EVA tlumení pro každodenní pohodlí.</li>
-        <li><strong>IGNITE:</strong> Pěna s vysokou návratností energie.</li>
-      </ul>
-      <h3>Ikonické modely</h3>
-      <ul>
-        <li>Suede, Clyde, Roma</li>
-        <li>RS‑X, Future Rider, MB.02</li>
-      </ul>
-      <h3>Novinky 2025</h3>
-      <p>MB.03 – třetí generace basketbalové řady LeMelo Balla, kolab s Rhude.</p>
-    </section>
+  <!-- RELEASES -->
+  <section id="releases">
+    <h2>Nadcházející vydání bot</h2>
+    <img class="img" src="https://images.unsplash.com/photo-1617664564360-3bd299c24e75?auto=format&fit=crop&w=1100&q=60" alt="Nové modely bot">
 
-    <section id="newbalance">
-      <h2>New Balance</h2>
-      <h3>Historie a milníky</h3>
-      <p><strong>1906:</strong> Začátky jako výroba ortopedických vložek. <strong>1982:</strong> Představení modelu 990. <strong>2014:</strong> Debut Fresh Foam pro běžecké boty.</p>
-      <h3>Technologie</h3>
-      <ul>
-        <li><strong>Fresh Foam:</strong> Jednorázově formovaná tlumící pěna.</li>
-        <li><strong>ABZORB:</strong> Kombinace pěny a polymeru pro tlumení nárazů.</li>
-        <li><strong>REVlite:</strong> Lehké tlumení bez ztráty výkonu.</li>
-      </ul>
-      <h3>Ikonické modely</h3>
-      <ul>
-        <li>990, 574, 1080</li>
-        <li>530, 327, 1500</li>
-      </ul>
-      <h3>Novinky 2025</h3>
-      <p>990v7 – evoluce prémiové řady, kolaborace s Aimé Leon Dore v exkluzivních barevných variantách.</p>
-    </section>
+    <ul class="release-list">
+      <li>
+        <strong>Nike Air Example</strong> – vydání: Q2 2026  
+        <div class="small muted">Moderní lehký design a skvělé tlumení.</div>
+      </li>
+      <li>
+        <strong>Adidas Runner X</strong> – vydání: Q3 2026  
+        <div class="small muted">Podrážka optimalizovaná pro dlouhé tratě.</div>
+      </li>
+      <li>
+        <strong>Classic Canvas Reissue</strong> – vydání: brzy  
+        <div class="small muted">Návrat ikonických plátěných bot.</div>
+      </li>
+    </ul>
+  </section>
 
-    <section id="udrzba">
-      <h2>Údržba bot</h2>
-      <h3>Základní péče</h3>
-      <ul>
-        <li>Odstraň hrubou špínu měkkým kartáčem.</li>
-        <li>Vyčisti savým hadříkem a jemným mýdlem.</li>
-        <li>Impregnuj podle materiálu (semiš, kůže, textil).</li>
-      </ul>
-      <h3>Odstranění skvrn a zápachu</h3>
-      <p>Skvrny od bahna a trávy řeš speciálními čističi; na zápach pomůže jedlá soda nebo speciální deodoranty do bot.</p>
-      <h3>Skladování</h3>
-      <ul>
-        <li>Boty skladuj v suchu, mimo přímé slunce.</li>
-        <li>Použij napínáky, aby si zachovaly tvar.</li>
-      </ul>
-    </section>
-
-    <section id="vyber">
-      <h2>Výběr bot</h2>
-      <h3>Podle aktivity</h3>
-      <ul>
-        <li><strong>Běhání:</strong> tlumení (Altra, HOKA, Nike Pegasus)</li>
-        <li><strong>Basketbal:</strong> podpora kotníku (Air Jordan, Kobe)</li>
-        <li><strong>Turistika:</strong> odolnost a trakce (Salomon, Merrell)</li>
-        <li><strong>Casual:</strong> styl & pohodlí (Vans, Converse, NB)</li>
-      </ul>
-      <h3>Tipy pro správnou velikost</h3>
-      <p>Zkoušej boty v odpoledních hodinách, kdy jsou nohy nejvíce nateklé. Měla by být kapka prostoru u prstů a bota by neměla tlačit ani být volná.</p>
-    </section>
-  </main>
+  <!-- JAK VYBRAT -->
+  <section id="vyber">
+    <h2>Jak vybrat správné boty</h2>
+    <img class="img" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1100&q=60" alt="Výběr bot">
+    <p>✔ Rozmysli si účel – sport, práce, volnočasově.</p>
+    <p>✔ Vybírej správnou velikost (zkoušej odpoledne).</p>
+    <p>✔ Sleduj materiál – prodyšnost vs. odolnost.</p>
+    <p>✔ Podrážka musí sedět typu pohybu.</p>
+  </section>
 
   <footer>
-    © 2025 Vše o botách. Všechna práva vyhrazena.
+    © 2025 Svět bot • Vytvořeno jako lehký web pro GitHub Pages
   </footer>
 
-  <script>
-    const secs = document.querySelectorAll("main section");
-    function update() {
-      const scrollX = document.querySelector("main").scrollLeft;
-      const w = window.innerWidth;
-      secs.forEach(s=>{
-        const d = Math.abs(scrollX - s.offsetLeft);
-        s.classList.toggle("visible", d < w/2);
-      });
-    }
-    const c = document.querySelector("main");
-    c.addEventListener("scroll", update);
-    update();
-    document.querySelectorAll("nav a").forEach(a=>{
-      a.onclick = e=>{
-        e.preventDefault();
-        const id = a.getAttribute("href").slice(1);
-        document.getElementById(id)
-          .scrollIntoView({behavior:"smooth", inline:"start"});
-      };
-    });
-  </script>
-
+</div>
 </body>
 </html>
