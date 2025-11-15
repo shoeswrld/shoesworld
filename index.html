@@ -7,11 +7,31 @@
 <style>
   body {margin:0;font-family:system-ui,Arial,sans-serif;background:#f7f7f7;}
   .wrap {max-width:900px;margin:auto;padding:20px;}
+  
+  /* Menu záložek */
   nav {display:flex;justify-content:space-around;margin-bottom:20px;flex-wrap:wrap;}
-  nav button {padding:10px 18px;border:none;border-radius:6px;background:#222;color:#fff;font-weight:600;cursor:pointer;transition:0.3s;}
+  nav button {
+    padding:10px 18px;
+    border:none;
+    border-radius:6px;
+    background:#222;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+  }
   nav button:hover, nav button.active {background:#c0392b;}
-  section {background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.05);display:none;}
-  section.active {display:block;}
+
+  /* Sekce */
+  section {
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.05);
+    display:none; /* všechny sekce skryté */
+  }
+  section.active {display:block;} /* pouze aktivní sekce je vidět */
+
   h1,h2 {margin-top:0;}
   img {width:100%;border-radius:10px;margin:12px 0;}
   .release-list {list-style:none;padding:0;}
@@ -94,9 +114,11 @@ const sections = document.querySelectorAll('section');
 
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
-    buttons.forEach(b=>b.classList.remove('active'));
+    // aktivní tlačítko
+    buttons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    sections.forEach(sec=>sec.classList.remove('active'));
+    // zobrazit jen cílovou sekci
+    sections.forEach(sec => sec.classList.remove('active'));
     const target = btn.getAttribute('data-target');
     document.getElementById(target).classList.add('active');
   });
