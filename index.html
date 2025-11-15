@@ -1,116 +1,101 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Svět bot — historie, typy a nové release</title>
-
-  <style>
-    :root{--max:900px;--accent:#222}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto;
-      background:#fafafa;
-      padding:20px;
-      display:flex;
-      justify-content:center;
-    }
-    .wrap{max-width:var(--max);width:100%}
-    header img{width:100%;border-radius:10px;margin-bottom:15px}
-    section{background:#fff;padding:18px;border-radius:10px;margin-bottom:14px;box-shadow:0 0 0 1px rgba(0,0,0,0.05)}
-    h2{margin:0 0 10px 0}
-    .img{width:100%;border-radius:10px;margin:12px 0}
-    .release-list{list-style:none;padding:0;margin:8px 0}
-    .release-list li{padding:8px 0;border-bottom:1px solid #eee}
-    nav a{margin-right:10px;color:#222;text-decoration:none;font-size:0.95rem}
-    nav a:hover{text-decoration:underline}
-    footer{text-align:center;font-size:0.85rem;color:#666;margin-top:20px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Svět bot – historie, typy a nové modely</title>
+<style>
+  body {margin:0;font-family:system-ui,Arial,sans-serif;background:#f7f7f7;line-height:1.6;}
+  .wrap {max-width:900px;margin:auto;padding:20px;}
+  header, section {background:#fff;padding:20px;border-radius:10px;margin-bottom:15px;box-shadow:0 0 10px rgba(0,0,0,0.05);}
+  nav {margin-bottom:15px;}
+  nav a {margin-right:12px;text-decoration:none;color:#222;font-weight:600;}
+  nav a:hover {text-decoration:underline;}
+  h1,h2 {margin-top:0;}
+  img {width:100%;border-radius:10px;margin:12px 0;}
+  .release-list {list-style:none;padding:0;}
+  .release-list li {padding:8px 0;border-bottom:1px solid #eee;}
+  footer{text-align:center;font-size:0.85rem;color:#666;margin-top:20px;}
+</style>
 </head>
-
 <body>
+
 <div class="wrap">
 
-  <!-- TOP obrázek -->
-  <header>
-    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Boty">
-    <h1>Svět bot</h1>
-    <p>Historie, druhy obuvi a přehled nových modelů.</p>
-  </header>
+<!-- NAV -->
+<nav>
+  <a href="#uvod">Úvod</a>
+  <a href="#historie">Historie</a>
+  <a href="#typy">Druhy bot</a>
+  <a href="#releases">Nové modely</a>
+  <a href="#vyber">Jak vybrat</a>
+</nav>
 
-  <nav>
-    <a href="#uvod">Úvod</a>
-    <a href="#historie">Historie</a>
-    <a href="#typy">Druhy</a>
-    <a href="#releases">Nové vydání</a>
-    <a href="#vyber">Jak vybrat</a>
-  </nav>
+<!-- ÚVOD -->
+<section id="uvod">
+  <h1>Svět bot</h1>
+  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Boty">
+  <p>Vítejte na průvodci světem bot. Najdete zde historii, typy obuvi, nadcházející vydání známých modelů a rady při výběru.</p>
+</section>
 
-  <!-- ÚVOD -->
-  <section id="uvod">
-    <h2>Úvod</h2>
-    <img class="img" src="https://images.unsplash.com/photo-1595950653175-1b6b65c1a562?auto=format&fit=crop&w=1100&q=60" alt="Tenisky">
-    <p>
-      Boty nejsou jen praktický doplněk – jsou módou, kulturou a často i sběratelským kouskem.
-      Na této stránce najdeš stručnou historii bot, typy obuvi i přehled plánovaných vydání známých modelů.
-    </p>
-  </section>
+<!-- HISTORIE -->
+<section id="historie">
+  <h2>Historie bot</h2>
+  <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1100&q=60" alt="Historie obuvi">
+  <p>První boty vznikaly již ve starověku jako ochrana chodidla. Industrializace umožnila masovou výrobu a rozvoj sportovní obuvi.</p>
+</section>
 
-  <!-- HISTORIE -->
-  <section id="historie">
-    <h2>Stručná historie bot</h2>
-    <img class="img" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1100&q=60" alt="Historie obuvi">
-    <p>
-      První boty vznikaly už ve starověku. Jednoduché sandály a kožené návleky chránily chodidla
-      před terénem. S rozvojem průmyslu se boty staly dostupnější a mnohem rozmanitější.
-    </p>
-  </section>
+<!-- TYPY BOT -->
+<section id="typy">
+  <h2>Druhy bot</h2>
+  <img src="https://images.unsplash.com/photo-1528701800489-20be9c5e6c52?auto=format&fit=crop&w=1100&q=60" alt="Různé typy bot">
+  <p><strong>Tenisky:</strong> pohodlné a volnočasové.</p>
+  <p><strong>Běžecké boty:</strong> s tlumením a podporou klenby.</p>
+  <p><strong>Outdoor:</strong> pevné a odolné.</p>
+  <p><strong>Pracovní obuv:</strong> ochranné prvky a pevné materiály.</p>
+</section>
 
-  <!-- TYPY BOT -->
-  <section id="typy">
-    <h2>Hlavní druhy bot</h2>
-    <img class="img" src="https://images.unsplash.com/photo-1528701800489-20be9c5e6c52?auto=format&fit=crop&w=1100&q=60" alt="Různé typy bot">
-    <p><strong>Tenisky:</strong> volnočasové a pohodlné.</p>
-    <p><strong>Běžecké boty:</strong> lehké, s tlumením a podporou klenby.</p>
-    <p><strong>Outdoor:</strong> pevné, odolné, vhodné do terénu.</p>
-    <p><strong>Pracovní obuv:</strong> ochranné prvky jako ocelová špička.</p>
-  </section>
+<!-- RELEASES -->
+<section id="releases">
+  <h2>Nadcházející vydání</h2>
+  <img src="https://images.unsplash.com/photo-1617664564360-3bd299c24e75?auto=format&fit=crop&w=1100&q=60" alt="Nové modely bot">
 
-  <!-- RELEASES -->
-  <section id="releases">
-    <h2>Nadcházející vydání bot</h2>
-    <img class="img" src="https://images.unsplash.com/photo-1617664564360-3bd299c24e75?auto=format&fit=crop&w=1100&q=60" alt="Nové modely bot">
+  <!-- Pro AdSense -->
+  <div style="margin:12px 0;text-align:center;background:#fffbe6;padding:10px;border-radius:6px;border:1px solid #fff3c4;color:#8a6d00;font-size:0.95rem;">
+    Místo pro AdSense reklamní blok
+  </div>
 
-    <ul class="release-list">
-      <li>
-        <strong>Nike Air Example</strong> – vydání: Q2 2026  
-        <div class="small muted">Moderní lehký design a skvělé tlumení.</div>
-      </li>
-      <li>
-        <strong>Adidas Runner X</strong> – vydání: Q3 2026  
-        <div class="small muted">Podrážka optimalizovaná pro dlouhé tratě.</div>
-      </li>
-      <li>
-        <strong>Classic Canvas Reissue</strong> – vydání: brzy  
-        <div class="small muted">Návrat ikonických plátěných bot.</div>
-      </li>
-    </ul>
-  </section>
+  <ul class="release-list">
+    <li><strong>Nike Air Example</strong> – Q2 2026</li>
+    <li><strong>Adidas Runner X</strong> – Q3 2026</li>
+    <li><strong>Classic Canvas Reissue</strong> – brzy</li>
+  </ul>
+</section>
 
-  <!-- JAK VYBRAT -->
-  <section id="vyber">
-    <h2>Jak vybrat správné boty</h2>
-    <img class="img" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1100&q=60" alt="Výběr bot">
-    <p>✔ Rozmysli si účel – sport, práce, volnočasově.</p>
-    <p>✔ Vybírej správnou velikost (zkoušej odpoledne).</p>
-    <p>✔ Sleduj materiál – prodyšnost vs. odolnost.</p>
-    <p>✔ Podrážka musí sedět typu pohybu.</p>
-  </section>
+<!-- JAK VYBRAT -->
+<section id="vyber">
+  <h2>Jak vybrat správné boty</h2>
+  <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1100&q=60" alt="Výběr bot">
+  <p>✔ Vyber správnou velikost.</p>
+  <p>✔ Zvaž účel – běh, práce, volný čas.</p>
+  <p>✔ Materiál ovlivňuje prodyšnost a odolnost.</p>
+  <p>✔ Podrážka musí odpovídat aktivitě.</p>
+</section>
 
-  <footer>
-    © 2025 Svět bot • Vytvořeno jako lehký web pro GitHub Pages
-  </footer>
+<footer>
+  © 2025 Svět bot – minimalistický průvodce • Vhodné pro GitHub Pages a AdSense
+</footer>
 
-</div>
+<script>
+// Smooth scroll pro menu
+document.querySelectorAll('nav a').forEach(a=>{
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    const id = this.getAttribute('href').substring(1);
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+
 </body>
 </html>
