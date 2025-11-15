@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Svět bot – záložky</title>
+<title>Svět bot – Dark Mode</title>
 <style>
-  body {margin:0;font-family:system-ui,Arial,sans-serif;background:#f7f7f7;}
+  body {margin:0;font-family:system-ui,Arial,sans-serif;background:#121212;color:#f0f0f0;}
   .wrap {max-width:900px;margin:auto;padding:20px;}
   
   /* Menu záložek */
@@ -14,30 +14,32 @@
     padding:10px 18px;
     border:none;
     border-radius:6px;
-    background:#222;
-    color:#fff;
+    background:#333;
+    color:#f0f0f0;
     font-weight:600;
     cursor:pointer;
     transition:0.3s;
   }
-  nav button:hover, nav button.active {background:#c0392b;}
+  nav button:hover, nav button.active {background:#c0392b;color:#fff;}
 
   /* Sekce */
   section {
-    background:#fff;
+    background:#1e1e1e;
     padding:20px;
     border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.05);
-    display:none; /* všechny sekce skryté */
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+    display:none;
   }
-  section.active {display:block;} /* pouze aktivní sekce je vidět */
+  section.active {display:block;}
 
-  h1,h2 {margin-top:0;}
+  h1,h2 {margin-top:0;color:#f0f0f0;}
   img {width:100%;border-radius:10px;margin:12px 0;}
   .release-list {list-style:none;padding:0;}
-  .release-list li {padding:8px 0;border-bottom:1px solid #eee;}
-  .tip {background:#fffbe6;padding:10px;border-radius:6px;border:1px solid #fff3c4;margin:12px 0;font-size:0.95rem;color:#8a6d00;}
-  footer{text-align:center;font-size:0.85rem;color:#666;margin-top:20px;}
+  .release-list li {padding:8px 0;border-bottom:1px solid #333;}
+  .tip {background:#333300;padding:10px;border-radius:6px;margin:12px 0;font-size:0.95rem;color:#f0e68c;}
+  footer{text-align:center;font-size:0.85rem;color:#aaa;margin-top:20px;}
+  a {color:#f0f0f0;text-decoration:none;}
+  a:hover {text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -105,7 +107,7 @@
 </section>
 
 <footer>
-  © 2025 Svět bot – interaktivní průvodce • GitHub Pages ready • AdSense ready
+  © 2025 Svět bot – Dark Mode průvodce • GitHub Pages ready • AdSense ready
 </footer>
 
 <script>
@@ -114,10 +116,8 @@ const sections = document.querySelectorAll('section');
 
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
-    // aktivní tlačítko
     buttons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    // zobrazit jen cílovou sekci
     sections.forEach(sec => sec.classList.remove('active'));
     const target = btn.getAttribute('data-target');
     document.getElementById(target).classList.add('active');
