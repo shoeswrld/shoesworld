@@ -3,72 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Svět bot – historie, typy a nové modely</title>
+<title>Svět bot – interaktivní průvodce</title>
 <style>
   body {margin:0;font-family:system-ui,Arial,sans-serif;background:#f7f7f7;line-height:1.6;}
   .wrap {max-width:900px;margin:auto;padding:20px;}
   header, section {background:#fff;padding:20px;border-radius:10px;margin-bottom:15px;box-shadow:0 0 10px rgba(0,0,0,0.05);}
-  nav {margin-bottom:15px;}
-  nav a {margin-right:12px;text-decoration:none;color:#222;font-weight:600;}
-  nav a:hover {text-decoration:underline;}
+  nav {display:flex;justify-content:space-around;margin-bottom:20px;flex-wrap:wrap;}
+  nav button {padding:10px 18px;border:none;border-radius:6px;background:#222;color:#fff;font-weight:600;cursor:pointer;transition:0.3s;}
+  nav button:hover, nav button.active {background:#c0392b;}
   h1,h2 {margin-top:0;}
   img {width:100%;border-radius:10px;margin:12px 0;}
   .release-list {list-style:none;padding:0;}
   .release-list li {padding:8px 0;border-bottom:1px solid #eee;}
   footer{text-align:center;font-size:0.85rem;color:#666;margin-top:20px;}
+  .tip {background:#fffbe6;padding:10px;border-radius:6px;border:1px solid #fff3c4;margin:12px 0;font-size:0.95rem;color:#8a6d00;}
+  section {display:none;} /* všechny sekce skryty kromě úvodu */
 </style>
 </head>
 <body>
 
 <div class="wrap">
 
-<!-- NAV -->
+<header>
+  <h1>Svět bot</h1>
+  <p>Interaktivní průvodce historií, typy a nadcházejícími modely bot</p>
+</header>
+
+<!-- Interaktivní bloky nahoře -->
 <nav>
-  <a href="#uvod">Úvod</a>
-  <a href="#historie">Historie</a>
-  <a href="#typy">Druhy bot</a>
-  <a href="#releases">Nové modely</a>
-  <a href="#vyber">Jak vybrat</a>
+  <button class="tab-btn active" data-target="uvod">Úvod</button>
+  <button class="tab-btn" data-target="historie">Historie</button>
+  <button class="tab-btn" data-target="typy">Druhy bot</button>
+  <button class="tab-btn" data-target="releases">Nové modely</button>
+  <button class="tab-btn" data-target="vyber">Jak vybrat</button>
 </nav>
 
 <!-- ÚVOD -->
-<section id="uvod">
-  <h1>Svět bot</h1>
+<section id="uvod" style="display:block;">
   <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Boty">
-  <p>Vítejte na průvodci světem bot. Najdete zde historii, typy obuvi, nadcházející vydání známých modelů a rady při výběru.</p>
+  <p>Vítejte na průvodci světem bot. Tento web je určen pro všechny nadšence obuvi – od sběratelů sneakers až po lidi, kteří hledají pohodlné boty pro každodenní nošení.</p>
 </section>
 
 <!-- HISTORIE -->
 <section id="historie">
   <h2>Historie bot</h2>
   <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1100&q=60" alt="Historie obuvi">
-  <p>První boty vznikaly již ve starověku jako ochrana chodidla. Industrializace umožnila masovou výrobu a rozvoj sportovní obuvi.</p>
+  <p>Boty se vyvíjely spolu s lidskou civilizací. Nejstarší boty byly sandály z kůže či rostlinných vláken. Industrializace umožnila masovou výrobu obuvi a vznik ikonických značek.</p>
+  <div class="tip">Tip: Nike Air Jordan se staly ikonou nejen sportu, ale i popkultury.</div>
 </section>
 
 <!-- TYPY BOT -->
 <section id="typy">
   <h2>Druhy bot</h2>
   <img src="https://images.unsplash.com/photo-1528701800489-20be9c5e6c52?auto=format&fit=crop&w=1100&q=60" alt="Různé typy bot">
-  <p><strong>Tenisky:</strong> pohodlné a volnočasové.</p>
-  <p><strong>Běžecké boty:</strong> s tlumením a podporou klenby.</p>
-  <p><strong>Outdoor:</strong> pevné a odolné.</p>
-  <p><strong>Pracovní obuv:</strong> ochranné prvky a pevné materiály.</p>
+  <p><strong>Tenisky:</strong> pohodlné, volnočasové.</p>
+  <p><strong>Běžecké:</strong> ergonomické s tlumením.</p>
+  <p><strong>Outdoor:</strong> odolné do terénu.</p>
+  <p><strong>Pracovní:</strong> bezpečnostní prvky.</p>
+  <p><strong>Módní:</strong> elegantní, pro formální příležitosti.</p>
 </section>
 
 <!-- RELEASES -->
 <section id="releases">
   <h2>Nadcházející vydání</h2>
   <img src="https://images.unsplash.com/photo-1617664564360-3bd299c24e75?auto=format&fit=crop&w=1100&q=60" alt="Nové modely bot">
-
-  <!-- Pro AdSense -->
-  <div style="margin:12px 0;text-align:center;background:#fffbe6;padding:10px;border-radius:6px;border:1px solid #fff3c4;color:#8a6d00;font-size:0.95rem;">
-    Místo pro AdSense reklamní blok
-  </div>
-
+  <div class="tip">Místo pro AdSense reklamní blok</div>
   <ul class="release-list">
     <li><strong>Nike Air Example</strong> – Q2 2026</li>
     <li><strong>Adidas Runner X</strong> – Q3 2026</li>
     <li><strong>Classic Canvas Reissue</strong> – brzy</li>
+    <li><strong>New Balance Retro</strong> – Q4 2026</li>
+    <li><strong>Puma Velocity</strong> – brzy</li>
   </ul>
 </section>
 
@@ -77,22 +82,32 @@
   <h2>Jak vybrat správné boty</h2>
   <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1100&q=60" alt="Výběr bot">
   <p>✔ Vyber správnou velikost.</p>
-  <p>✔ Zvaž účel – běh, práce, volný čas.</p>
+  <p>✔ Zvaž účel.</p>
   <p>✔ Materiál ovlivňuje prodyšnost a odolnost.</p>
   <p>✔ Podrážka musí odpovídat aktivitě.</p>
+  <div class="tip">Tip: Sledujte oficiální release značek pro limitované sneakers.</div>
 </section>
 
 <footer>
-  © 2025 Svět bot – minimalistický průvodce • Vhodné pro GitHub Pages a AdSense
+  © 2025 Svět bot – interaktivní průvodce • GitHub Pages ready • AdSense ready
 </footer>
 
 <script>
-// Smooth scroll pro menu
-document.querySelectorAll('nav a').forEach(a=>{
-  a.addEventListener('click', function(e){
-    e.preventDefault();
-    const id = this.getAttribute('href').substring(1);
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+const buttons = document.querySelectorAll('.tab-btn');
+const sections = document.querySelectorAll('section');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Odstranit active z ostatních
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Skrýt všechny sekce
+    sections.forEach(sec=>sec.style.display='none');
+    // Zobrazit cílovou sekci
+    const target = btn.getAttribute('data-target');
+    document.getElementById(target).style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
   });
 });
 </script>
